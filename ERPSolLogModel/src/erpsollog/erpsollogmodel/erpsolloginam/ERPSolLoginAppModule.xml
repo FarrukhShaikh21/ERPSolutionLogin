@@ -8,6 +8,6 @@
   InheritPersonalization="merge"
   ClearCacheOnRollback="true">
   <ViewUsage
-    Name="SysUsersView1"
+    Name="SysUsersLoginRO"
     ViewObjectName="erpsollog.erpsollogmodel.erpsolloginvo.SysUsersView"/>
 </AppModule>
