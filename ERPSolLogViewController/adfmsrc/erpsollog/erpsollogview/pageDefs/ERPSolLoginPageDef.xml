@@ -9,6 +9,8 @@
       <variable Type="java.lang.String" Name="doERPSolutionLogin_pUserCode" IsQueriable="false"/>
       <variable Type="java.lang.String" Name="doERPSolutionLogin_pUserassword" IsQueriable="false"/>
     </variableIterator>
+    <iterator Binds="SysUsersLoginRO" RangeSize="25" DataControl="ERPSolLoginAppModuleDataControl"
+              id="SysUsersLoginROIterator"/>
   </executables>
   <bindings>
     <methodAction id="doERPSolutionLogin" RequiresUpdateModel="true" Action="invokeMethod"
@@ -32,6 +34,21 @@
     <attributeValues IterBinding="variables" id="return">
       <AttrNames>
         <Item Value="doERPSolutionLogin_return"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SysUsersLoginROIterator" id="Regionid">
+      <AttrNames>
+        <Item Value="Regionid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SysUsersLoginROIterator" id="Storeid">
+      <AttrNames>
+        <Item Value="Storeid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SysUsersLoginROIterator" id="Locationid">
+      <AttrNames>
+        <Item Value="Locationid"/>
       </AttrNames>
     </attributeValues>
   </bindings>

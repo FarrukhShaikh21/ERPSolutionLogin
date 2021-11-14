@@ -17,6 +17,9 @@ public class ERPSolLoginBean {
    String ERPSolUserCode;
    String ERPSolPassword;
    String ERPSolResult;
+   String ERPSolUserLocationCode;
+   String ERPSolUserRegionCode;
+   String ERPSolUserStoreCode;
 
     public String doLoginERPSolApp() {
             // Add event code here...

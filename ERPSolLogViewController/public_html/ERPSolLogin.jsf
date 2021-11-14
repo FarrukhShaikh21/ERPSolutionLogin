@@ -29,6 +29,30 @@
                                      showDisclosure="false">
                             <f:facet name="toolbar"/>
                             <af:panelFormLayout id="pfl1">
+                                <af:inputText value="#{bindings.Locationid.inputValue}"
+                                              label="#{bindings.Locationid.hints.label}"
+                                              required="#{bindings.Locationid.hints.mandatory}"
+                                              columns="#{bindings.Locationid.hints.displayWidth}"
+                                              maximumLength="#{bindings.Locationid.hints.precision}"
+                                              shortDesc="#{bindings.Locationid.hints.tooltip}" id="it6">
+                                    <f:validator binding="#{bindings.Locationid.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Storeid.inputValue}"
+                                              label="#{bindings.Storeid.hints.label}"
+                                              required="#{bindings.Storeid.hints.mandatory}"
+                                              columns="#{bindings.Storeid.hints.displayWidth}"
+                                              maximumLength="#{bindings.Storeid.hints.precision}"
+                                              shortDesc="#{bindings.Storeid.hints.tooltip}" id="it5">
+                                    <f:validator binding="#{bindings.Storeid.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Regionid.inputValue}"
+                                              label="#{bindings.Regionid.hints.label}"
+                                              required="#{bindings.Regionid.hints.mandatory}"
+                                              columns="#{bindings.Regionid.hints.displayWidth}"
+                                              maximumLength="#{bindings.Regionid.hints.precision}"
+                                              shortDesc="#{bindings.Regionid.hints.tooltip}" id="it4">
+                                    <f:validator binding="#{bindings.Regionid.validator}"/>
+                                </af:inputText>
                                 <af:inputText value="#{bindings.return.inputValue}"
                                               label="#{bindings.return.hints.label}"
                                               required="#{bindings.return.hints.mandatory}"
