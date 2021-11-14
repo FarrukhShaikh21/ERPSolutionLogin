@@ -302,7 +302,7 @@ public class ERPSolLogin {
        }
         else {
             FacesContext context = FacesContext.getCurrentInstance();
-//            context.addMessage(null, new FacesMessage.;
+            context.addMessage(null, new FacesMessage("Invalid Login Id / Password"));
         }
         return null;
     }
