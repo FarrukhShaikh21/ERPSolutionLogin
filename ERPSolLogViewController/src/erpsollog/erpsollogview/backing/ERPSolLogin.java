@@ -1,5 +1,9 @@
 package erpsollog.erpsollogview.backing;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+
+import oracle.adf.model.BindingContext;
 import oracle.adf.view.rich.component.rich.RichDocument;
 import oracle.adf.view.rich.component.rich.RichForm;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
@@ -12,6 +16,9 @@ import oracle.adf.view.rich.component.rich.layout.RichPanelGridLayout;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.component.rich.output.RichMessages;
 import oracle.adf.view.rich.component.rich.output.RichSpacer;
+
+import oracle.binding.BindingContainer;
+import oracle.binding.OperationBinding;
 
 public class ERPSolLogin {
     private RichForm f1;
@@ -36,6 +43,14 @@ public class ERPSolLogin {
     private RichSpacer s3;
     private RichSpacer s4;
     private RichDecorativeBox db1;
+    private RichButton b2;
+    private RichGridRow gr3;
+    private RichGridCell gc7;
+    private RichGridCell gc8;
+    private RichGridCell gc9;
+    private RichSpacer s5;
+    private RichSpacer s6;
+    private RichInputText it3;
 
     public void setF1(RichForm f1) {
         this.f1 = f1;
@@ -216,5 +231,99 @@ public class ERPSolLogin {
 
     public RichDecorativeBox getDb1() {
         return db1;
+    }
+
+    public void setB2(RichButton b2) {
+        this.b2 = b2;
+    }
+
+    public RichButton getB2() {
+        return b2;
+    }
+
+    public void setGr3(RichGridRow gr3) {
+        this.gr3 = gr3;
+    }
+
+    public RichGridRow getGr3() {
+        return gr3;
+    }
+
+    public void setGc7(RichGridCell gc7) {
+        this.gc7 = gc7;
+    }
+
+    public RichGridCell getGc7() {
+        return gc7;
+    }
+
+    public void setGc8(RichGridCell gc8) {
+        this.gc8 = gc8;
+    }
+
+    public RichGridCell getGc8() {
+        return gc8;
+    }
+
+    public void setGc9(RichGridCell gc9) {
+        this.gc9 = gc9;
+    }
+
+    public RichGridCell getGc9() {
+        return gc9;
+    }
+
+    public void setS5(RichSpacer s5) {
+        this.s5 = s5;
+    }
+
+    public RichSpacer getS5() {
+        return s5;
+    }
+
+    public void setS6(RichSpacer s6) {
+        this.s6 = s6;
+    }
+
+    public RichSpacer getS6() {
+        return s6;
+    }
+
+    public String doLoginERPSolApp() {
+        // Add event code here...
+        BindingContainer bindings = getBindings();
+        OperationBinding operationBinding = bindings.getOperationBinding("doERPSolutionLogin");
+        Object result = operationBinding.execute();
+        if (!operationBinding.getErrors().isEmpty()) {
+            return null;
+        }
+        if (getIt3().getValue().toString().equals("ERPSOLYES")) {
+            return "ACT-ERPLOGINSUCCESS";
+       }
+        else {
+            FacesContext context = FacesContext.getCurrentInstance();
+//            context.addMessage(null, new FacesMessage.;
+        }
+        return null;
+    }
+
+
+    public String b3_action() {
+        // Add event code here...
+        return null;
+    }
+
+
+    public BindingContainer getBindings() {
+        return BindingContext.getCurrent().getCurrentBindingsEntry();
+    }
+
+
+    public void setIt3(RichInputText it3) {
+        this.it3 = it3;
+    }
+
+    public RichInputText getIt3() {
+        return it3;
     }
 }

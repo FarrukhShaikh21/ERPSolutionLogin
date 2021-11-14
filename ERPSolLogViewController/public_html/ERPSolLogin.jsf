@@ -4,70 +4,85 @@
     <af:document title="ERPSolLogin.jsf" id="d1" binding="#{backingBeanScope.backing_ERPSolLogin.d1}">
         <af:messages binding="#{backingBeanScope.backing_ERPSolLogin.m1}" id="m1"/>
         <af:form id="f1" binding="#{backingBeanScope.backing_ERPSolLogin.f1}">
+            <af:panelGridLayout id="pgl1" binding="#{backingBeanScope.backing_ERPSolLogin.pgl1}">
+                <af:gridRow marginTop="5px" id="gr1"
+                            binding="#{backingBeanScope.backing_ERPSolLogin.gr1}" height="10%">
+                    <af:gridCell id="gc2" binding="#{backingBeanScope.backing_ERPSolLogin.gc2}" width="40%"
+                                 halign="stretch" valign="stretch">
+                        <af:spacer width="10" height="10" id="s1" binding="#{backingBeanScope.backing_ERPSolLogin.s1}"/>
+                    </af:gridCell>
+                    <af:gridCell id="gc1" binding="#{backingBeanScope.backing_ERPSolLogin.gc1}" width="33%"
+                                 valign="stretch" halign="stretch">
+                        <af:spacer width="10" height="10" id="s2" binding="#{backingBeanScope.backing_ERPSolLogin.s2}"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc3"
+                                 binding="#{backingBeanScope.backing_ERPSolLogin.gc3}" halign="stretch"
+                                 valign="stretch">
+                        <af:spacer width="10" height="10" id="s3" binding="#{backingBeanScope.backing_ERPSolLogin.s3}"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr2"
+                            binding="#{backingBeanScope.backing_ERPSolLogin.gr2}">
+                    <af:gridCell id="gc6" binding="#{backingBeanScope.backing_ERPSolLogin.gc6}" width="40%"
+                                 halign="stretch">
+                        <af:spacer width="10" height="10" id="s6" binding="#{backingBeanScope.backing_ERPSolLogin.s6}"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="33%" id="gc5"
+                                 binding="#{backingBeanScope.backing_ERPSolLogin.gc5}">
+                        <af:panelBox text="Welcome to ERP Solution Login " id="pb1"
+                                     binding="#{backingBeanScope.backing_ERPSolLogin.pb1}" disclosed="false"
+                                     showDisclosure="false">
+                            <f:facet name="toolbar"/>
+                            <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_ERPSolLogin.pfl1}">
+                                <af:inputText value="#{bindings.return.inputValue}"
+                                              label="#{bindings.return.hints.label}"
+                                              required="#{bindings.return.hints.mandatory}"
+                                              columns="#{bindings.return.hints.displayWidth}"
+                                              maximumLength="#{bindings.return.hints.precision}"
+                                              shortDesc="#{bindings.return.hints.tooltip}" id="it3"
+                                              binding="#{backingBeanScope.backing_ERPSolLogin.it3}" rendered="false">
+                                    <f:validator binding="#{bindings.return.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.pUserCode.inputValue}" label="Login ID"
+                                              required="#{bindings.pUserCode.hints.mandatory}"
+                                              columns="#{bindings.pUserCode.hints.displayWidth}"
+                                              maximumLength="#{bindings.pUserCode.hints.precision}"
+                                              shortDesc="#{bindings.pUserCode.hints.tooltip}" id="it1"
+                                              binding="#{backingBeanScope.backing_ERPSolLogin.it1}">
+                                    <f:validator binding="#{bindings.pUserCode.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.pUserassword.inputValue}" label="Password"
+                                              required="#{bindings.pUserassword.hints.mandatory}"
+                                              columns="#{bindings.pUserassword.hints.displayWidth}"
+                                              maximumLength="#{bindings.pUserassword.hints.precision}"
+                                              shortDesc="#{bindings.pUserassword.hints.tooltip}" id="it2"
+                                              binding="#{backingBeanScope.backing_ERPSolLogin.it2}" secret="true">
+                                    <f:validator binding="#{bindings.pUserassword.validator}"/>
+                                </af:inputText>
+                                <af:button text="Sign In" id="b2" binding="#{backingBeanScope.backing_ERPSolLogin.b2}"
+                                           action="#{backingBeanScope.backing_ERPSolLogin.doLoginERPSolApp}"/>
+                                <af:button actionListener="#{bindings.doERPSolutionLogin.execute}" text="Login"
+                                           disabled="#{!bindings.doERPSolutionLogin.enabled}" id="b1"
+                                           binding="#{backingBeanScope.backing_ERPSolLogin.b1}" rendered="false"/>
+                            </af:panelFormLayout>
+                        </af:panelBox>
+                    </af:gridCell>
+                    <af:gridCell id="gc4" binding="#{backingBeanScope.backing_ERPSolLogin.gc4}" width="33%"
+                                 halign="stretch">
+                        <af:spacer width="10" height="10" id="s4" binding="#{backingBeanScope.backing_ERPSolLogin.s4}"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow id="gr3" binding="#{backingBeanScope.backing_ERPSolLogin.gr3}" height="15%">
+                    <af:gridCell id="gc7" binding="#{backingBeanScope.backing_ERPSolLogin.gc7}" halign="stretch"/>
+                    <af:gridCell id="gc8" binding="#{backingBeanScope.backing_ERPSolLogin.gc8}" halign="stretch">
+                        <af:spacer width="10" height="10" id="s5" binding="#{backingBeanScope.backing_ERPSolLogin.s5}"/>
+                    </af:gridCell>
+                    <af:gridCell id="gc9" binding="#{backingBeanScope.backing_ERPSolLogin.gc9}" halign="stretch"/>
+                </af:gridRow>
+            </af:panelGridLayout>
             <af:decorativeBox id="db1" binding="#{backingBeanScope.backing_ERPSolLogin.db1}" theme="medium"
-                              dimensionsFrom="parent">
-                <f:facet name="center">
-                    <af:panelGridLayout id="pgl1" binding="#{backingBeanScope.backing_ERPSolLogin.pgl1}">
-                        <af:gridRow marginTop="5px" height="200px" id="gr1"
-                                    binding="#{backingBeanScope.backing_ERPSolLogin.gr1}">
-                            <af:gridCell id="gc2" binding="#{backingBeanScope.backing_ERPSolLogin.gc2}" width="40%"
-                                         halign="stretch">
-                                <af:spacer width="10" height="10" id="s1"
-                                           binding="#{backingBeanScope.backing_ERPSolLogin.s1}"/>
-                            </af:gridCell>
-                            <af:gridCell id="gc1" binding="#{backingBeanScope.backing_ERPSolLogin.gc1}" width="33%">
-                                <af:spacer width="10" height="10" id="s2"
-                                           binding="#{backingBeanScope.backing_ERPSolLogin.s2}"/>
-                            </af:gridCell>
-                            <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc3"
-                                         binding="#{backingBeanScope.backing_ERPSolLogin.gc3}" halign="stretch">
-                                <af:spacer width="10" height="10" id="s3"
-                                           binding="#{backingBeanScope.backing_ERPSolLogin.s3}"/>
-                            </af:gridCell>
-                        </af:gridRow>
-                        <af:gridRow marginTop="5px" height="auto" id="gr2"
-                                    binding="#{backingBeanScope.backing_ERPSolLogin.gr2}">
-                            <af:gridCell id="gc6" binding="#{backingBeanScope.backing_ERPSolLogin.gc6}" width="40%"
-                                         halign="stretch"/>
-                            <af:gridCell marginStart="5px" width="33%" id="gc5"
-                                         binding="#{backingBeanScope.backing_ERPSolLogin.gc5}">
-                                <af:panelBox text="Welcome to ERP Solution Login " id="pb1"
-                                             binding="#{backingBeanScope.backing_ERPSolLogin.pb1}" disclosed="false"
-                                             showDisclosure="false">
-                                    <f:facet name="toolbar"/>
-                                    <af:panelFormLayout id="pfl1"
-                                                        binding="#{backingBeanScope.backing_ERPSolLogin.pfl1}">
-                                        <af:inputText value="#{bindings.pUserCode.inputValue}" label="Login ID"
-                                                      required="#{bindings.pUserCode.hints.mandatory}"
-                                                      columns="#{bindings.pUserCode.hints.displayWidth}"
-                                                      maximumLength="#{bindings.pUserCode.hints.precision}"
-                                                      shortDesc="#{bindings.pUserCode.hints.tooltip}" id="it1"
-                                                      binding="#{backingBeanScope.backing_ERPSolLogin.it1}">
-                                            <f:validator binding="#{bindings.pUserCode.validator}"/>
-                                        </af:inputText>
-                                        <af:inputText value="#{bindings.pUserassword.inputValue}" label="Password"
-                                                      required="#{bindings.pUserassword.hints.mandatory}"
-                                                      columns="#{bindings.pUserassword.hints.displayWidth}"
-                                                      maximumLength="#{bindings.pUserassword.hints.precision}"
-                                                      shortDesc="#{bindings.pUserassword.hints.tooltip}" id="it2"
-                                                      binding="#{backingBeanScope.backing_ERPSolLogin.it2}"
-                                                      secret="true">
-                                            <f:validator binding="#{bindings.pUserassword.validator}"/>
-                                        </af:inputText>
-                                        <af:button actionListener="#{bindings.doERPSolutionLogin.execute}" text="Login"
-                                                   disabled="#{!bindings.doERPSolutionLogin.enabled}" id="b1"
-                                                   binding="#{backingBeanScope.backing_ERPSolLogin.b1}"/>
-                                    </af:panelFormLayout>
-                                </af:panelBox>
-                            </af:gridCell>
-                            <af:gridCell id="gc4" binding="#{backingBeanScope.backing_ERPSolLogin.gc4}" width="33%"
-                                         halign="stretch">
-                                <af:spacer width="10" height="10" id="s4"
-                                           binding="#{backingBeanScope.backing_ERPSolLogin.s4}"/>
-                            </af:gridCell>
-                        </af:gridRow>
-                    </af:panelGridLayout>
-                </f:facet>
+                              dimensionsFrom="parent" rendered="false">
+                <f:facet name="center"/>
                 <f:facet name="top"/>
             </af:decorativeBox>
         </af:form>

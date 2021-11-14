@@ -29,5 +29,10 @@
         <Item Value="doERPSolutionLogin_pUserassword"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="variables" id="return">
+      <AttrNames>
+        <Item Value="doERPSolutionLogin_return"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
