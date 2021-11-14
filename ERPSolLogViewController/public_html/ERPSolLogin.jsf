@@ -2,7 +2,12 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="ERPSolLogin.jsf" id="d1" binding="#{backingBeanScope.backing_ERPSolLogin.d1}">
-        <af:form id="f1" binding="#{backingBeanScope.backing_ERPSolLogin.f1}"></af:form>
+        <af:form id="f1" binding="#{backingBeanScope.backing_ERPSolLogin.f1}">
+            <af:decorativeBox id="db1" binding="#{backingBeanScope.backing_ERPSolLogin.db1}">
+                <f:facet name="center"/>
+                <f:facet name="top"/>
+            </af:decorativeBox>
+        </af:form>
     </af:document>
     <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_ERPSolLogin-->
 </f:view>

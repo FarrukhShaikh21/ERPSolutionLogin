@@ -12,7 +12,13 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  ComponentClass="erpsollog.erpsollogmodel.erpsolloginvo.SysUsersViewImpl"
+  ComponentInterface="erpsollog.erpsollogmodel.erpsolloginvo.common.SysUsersView"
+  ClientProxyName="erpsollog.erpsollogmodel.erpsolloginvo.client.SysUsersViewClient">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
+  </DesignTime>
   <EntityUsage
     Name="SysUsers"
     Entity="erpsollog.erpsollogmodel.erpsollogineo.SysUsers"/>
@@ -163,4 +169,20 @@
     EntityAttrName="Userseq"
     EntityUsage="SysUsers"
     AliasName="USERSEQ"/>
+  <ClientInterface
+    Name="__clientInterface">
+    <Method
+      Name="doERPSolutionLogin"
+      MethodName="doERPSolutionLogin">
+      <Return
+        Name="_return_type_"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="pUserCode"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="pUserassword"
+        Type="java.lang.String"/>
+    </Method>
+  </ClientInterface>
 </ViewObject>
