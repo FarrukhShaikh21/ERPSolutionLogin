@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="ERPSolLogin">
+    <page>/ERPSolLogin.jsf</page>
+  </view>
+  <task-flow-call id="ERPSOLLOGBTF">
+    <task-flow-reference>
+      <document>/WEB-INF/ERPSOLLOGBTF.xml</document>
+      <id>ERPSOLLOGBTF</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <control-flow-rule id="__2">
+    <from-activity-id>ERPSolLogin</from-activity-id>
+    <control-flow-case id="__3">
+      <from-outcome>ACT-ERPSOLLOGIN</from-outcome>
+      <to-activity-id>ERPSOLLOGBTF</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
   <managed-bean id="__1">
-    <managed-bean-name>backing_ERPSolLogin</managed-bean-name>
-    <managed-bean-class>erpsollog.erpsollogview.backing.ERPSolLogin</managed-bean-class>
-    <managed-bean-scope>backingBean</managed-bean-scope>
+    <managed-bean-name>ERPSolLogViewBean</managed-bean-name>
+    <managed-bean-class>erpsollog.erpsollogview.erpsollogclass.ERPSolLoginBean</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
   </managed-bean>
 </adfc-config>

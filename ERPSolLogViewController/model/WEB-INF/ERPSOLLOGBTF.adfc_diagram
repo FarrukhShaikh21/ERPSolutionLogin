@@ -9,14 +9,54 @@
       <property
          name="page">/ERPSolMain.jsf</property>
       <property
-         name="start">true</property>
+         name="start">false</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>ERPSolMain&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>ERPSolMain&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">248.79883</property>
+         name="y">348.6953</property>
       <property
-         name="x">296.01367</property>
+         name="x">437.01367</property>
    </View>
+   <MethodCall
+      id="MethodCall3">
+      <property
+         name="activityId">doSetERPSolLoginSessionGlobals</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>doSetERPSolLoginSessionGlobals&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">211.29883</property>
+      <property
+         name="x">437.0</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="MethodCall3"
+      to="View2">
+      <property
+         name="fromOutcome">ACT-ERPSOL-GOTO-MAIN</property>
+      <property
+         name="sdm:polyPoints">B50,437.0,265.47577,437.01367,293.8172,T50</property>
+   </ControlFlowCase>
+   <TaskFlowReturn
+      id="TaskFlowReturn5">
+      <property
+         name="activityId">ERPSolLoginReturn</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ERPSolLoginReturn&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  ERPSolLoginReturn&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">217.59766</property>
+      <property
+         name="x">658.0</property>
+   </TaskFlowReturn>
 </SDM>

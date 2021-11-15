@@ -2,6 +2,22 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="ERPSolMain.jsf" id="d1">
-        <af:form id="f1"></af:form>
+        <af:form id="f1">
+            <af:decorativeBox id="db1" dimensionsFrom="parent">
+                <f:facet name="center">
+                    <af:panelGridLayout id="pgl1">
+                        <af:gridRow marginTop="5px" height="auto" id="gr1">
+                            <af:gridCell marginStart="5px" width="34%" id="gc1" halign="stretch" valign="stretch">
+                                <af:button text="Supply Chain" id="b1"/>
+                            </af:gridCell>
+                            <af:gridCell marginStart="5px" width="33%" id="gc2" halign="stretch" valign="stretch"/>
+                            <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc3" halign="stretch"
+                                         valign="stretch"/>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </f:facet>
+                <f:facet name="top"/>
+            </af:decorativeBox>
+        </af:form>
     </af:document>
 </f:view>

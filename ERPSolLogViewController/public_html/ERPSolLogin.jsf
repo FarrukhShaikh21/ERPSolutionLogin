@@ -34,7 +34,9 @@
                                               required="#{bindings.Locationid.hints.mandatory}"
                                               columns="#{bindings.Locationid.hints.displayWidth}"
                                               maximumLength="#{bindings.Locationid.hints.precision}"
-                                              shortDesc="#{bindings.Locationid.hints.tooltip}" id="it6">
+                                              shortDesc="#{bindings.Locationid.hints.tooltip}" id="it6"
+                                              rendered="false"
+                                              binding="#{viewScope.ERPSolLogViewBean.ERPSolUserLocationCode}">
                                     <f:validator binding="#{bindings.Locationid.validator}"/>
                                 </af:inputText>
                                 <af:inputText value="#{bindings.Storeid.inputValue}"
@@ -42,7 +44,8 @@
                                               required="#{bindings.Storeid.hints.mandatory}"
                                               columns="#{bindings.Storeid.hints.displayWidth}"
                                               maximumLength="#{bindings.Storeid.hints.precision}"
-                                              shortDesc="#{bindings.Storeid.hints.tooltip}" id="it5">
+                                              shortDesc="#{bindings.Storeid.hints.tooltip}" id="it5" rendered="false"
+                                              binding="#{viewScope.ERPSolLogViewBean.ERPSolUserStoreCode}">
                                     <f:validator binding="#{bindings.Storeid.validator}"/>
                                 </af:inputText>
                                 <af:inputText value="#{bindings.Regionid.inputValue}"
@@ -50,7 +53,8 @@
                                               required="#{bindings.Regionid.hints.mandatory}"
                                               columns="#{bindings.Regionid.hints.displayWidth}"
                                               maximumLength="#{bindings.Regionid.hints.precision}"
-                                              shortDesc="#{bindings.Regionid.hints.tooltip}" id="it4">
+                                              shortDesc="#{bindings.Regionid.hints.tooltip}" id="it4" rendered="false"
+                                              binding="#{viewScope.ERPSolLogViewBean.ERPSolUserRegionCode}">
                                     <f:validator binding="#{bindings.Regionid.validator}"/>
                                 </af:inputText>
                                 <af:inputText value="#{bindings.return.inputValue}"
@@ -66,17 +70,21 @@
                                               required="#{bindings.pUserCode.hints.mandatory}"
                                               columns="#{bindings.pUserCode.hints.displayWidth}"
                                               maximumLength="#{bindings.pUserCode.hints.precision}"
-                                              shortDesc="#{bindings.pUserCode.hints.tooltip}" id="it1">
+                                              shortDesc="#{bindings.pUserCode.hints.tooltip}" id="it1"
+                                              contentStyle="text-transform:uppercase"
+                                              binding="#{viewScope.ERPSolLogViewBean.ERPSolUserCode}">
                                     <f:validator binding="#{bindings.pUserCode.validator}"/>
                                 </af:inputText>
                                 <af:inputText value="#{bindings.pUserassword.inputValue}" label="Password"
                                               required="#{bindings.pUserassword.hints.mandatory}"
                                               columns="#{bindings.pUserassword.hints.displayWidth}"
                                               maximumLength="#{bindings.pUserassword.hints.precision}"
-                                              shortDesc="#{bindings.pUserassword.hints.tooltip}" id="it2" secret="true">
+                                              shortDesc="#{bindings.pUserassword.hints.tooltip}" id="it2" secret="true"
+                                              binding="#{viewScope.ERPSolLogViewBean.ERPSolPassword}">
                                     <f:validator binding="#{bindings.pUserassword.validator}"/>
                                 </af:inputText>
-                                <af:button text="Sign In" id="b2"/>
+                                <af:button text="Sign In" id="b2"
+                                           action="#{viewScope.ERPSolLogViewBean.doLoginERPSolApp}"/>
                                 <af:button actionListener="#{bindings.doERPSolutionLogin.execute}" text="Login"
                                            disabled="#{!bindings.doERPSolutionLogin.enabled}" id="b1"
                                            rendered="false"/>
