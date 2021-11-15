@@ -5,11 +5,12 @@ import javax.faces.context.FacesContext;
 
 import oracle.adf.model.BindingContext;
 
+import oracle.adf.model.OperationBinding;
 import oracle.adf.share.ADFContext;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
 
 import oracle.binding.BindingContainer;
-import oracle.binding.OperationBinding;
+
 import oracle.binding.BindingContainer;
 
 
@@ -31,26 +32,38 @@ public class ERPSolLoginBean {
     
     
     public String doLoginERPSolApp() {
+        System.out.println("one");
             // Add event code here...
             BindingContainer bindings = getBindings();
-            OperationBinding operationBinding = bindings.getOperationBinding("doERPSolutionLogin");
+            System.out.println("one-");
+            OperationBinding operationBinding =(OperationBinding) bindings.getOperationBinding("doERPSolutionLogin");
+            System.out.println("one-1");
             Object result = operationBinding.execute();
-            if (!operationBinding.getErrors().isEmpty()) {
+            System.out.println("one-2");
+            /*if (!operationBinding.getErrors().isEmpty()) {
                 return null;
-            }
+            }*/
             if (getERPSolResult().getValue().toString().equals("ERPSOLYES")) {
-                
+                System.out.println("1");
                setERPSolStrUserCode(getERPSolUserCode().getValue().toString());
+               System.out.println("2");
                setERPSolStrUserLocationCode(getERPSolUserLocationCode().getValue().toString());
+               System.out.println("3");
                setERPSolStrUserRegionCode(getERPSolUserRegionCode().getValue().toString());
+               System.out.println("4");
                setERPSolStrUserStoreCode(getERPSolUserStoreCode().getValue().toString());
+               System.out.println("5");
                
                 return "ACT-ERPSOLLOGIN";
            }
             else {
+                System.out.println("two");
                 FacesContext context = FacesContext.getCurrentInstance();
+                System.out.println("three");
                 context.addMessage(null, new FacesMessage("Invalid Login Id / Password"));
+                System.out.println("four");
             }
+            System.out.println("five");
             return null;
         }
 

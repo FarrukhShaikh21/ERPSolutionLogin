@@ -33,16 +33,57 @@
     <view id="ERPSolMain">
       <page>/ERPSolMain.jsf</page>
     </view>
-    <method-call id="doSetERPSolLoginSessionGlobals"></method-call>
+    <method-call id="doSetERPSolLoginSessionGlobals">
+      <method>#{pageFlowScope.ERPSolLogPageFlowBean.doSetERPSolLoginSessionGlobals}</method>
+      <outcome>
+        <fixed-outcome>ACT-ERPSOL-GOTO-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
     <task-flow-return id="ERPSolLoginReturn">
       <outcome>
         <name>ERPSolLoginReturn</name>
       </outcome>
     </task-flow-return>
+    <task-flow-call id="ERPSOLSCMBTF">
+      <task-flow-reference>
+        <document>/WEB-INF/ERPSOLSCM.xml</document>
+        <id>ERPSOLSCMBTF</id>
+      </task-flow-reference>
+      <input-parameter id="__10">
+        <name>P_ADF_USERCODE</name>
+        <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserCode}</value>
+      </input-parameter>
+      <input-parameter id="__11">
+        <name>P_ADF_USER_LOCATIONCODE</name>
+        <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserLocationCode}</value>
+      </input-parameter>
+      <input-parameter id="__12">
+        <name>P_ADF_USER_STORECODE</name>
+        <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserStoreCode}</value>
+      </input-parameter>
+      <input-parameter id="__13">
+        <name>P_ADF_USER_REGIONCODE</name>
+        <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserRegionCode}</value>
+      </input-parameter>
+    </task-flow-call>
     <control-flow-rule id="__6">
       <from-activity-id>doSetERPSolLoginSessionGlobals</from-activity-id>
       <control-flow-case id="__7">
         <from-outcome>ACT-ERPSOL-GOTO-MAIN</from-outcome>
+        <to-activity-id>ERPSolMain</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__8">
+      <from-activity-id>ERPSolMain</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome>ACT-ERPSOL-GOTO-SCM</from-outcome>
+        <to-activity-id>ERPSOLSCMBTF</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__14">
+      <from-activity-id>ERPSOLSCMBTF</from-activity-id>
+      <control-flow-case id="__15">
+        <from-outcome>ERPSOL-RETURN-FROM-SCM</from-outcome>
         <to-activity-id>ERPSolMain</to-activity-id>
       </control-flow-case>
     </control-flow-rule>

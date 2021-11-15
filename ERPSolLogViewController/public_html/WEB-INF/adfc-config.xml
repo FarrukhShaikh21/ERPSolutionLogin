@@ -8,6 +8,22 @@
       <document>/WEB-INF/ERPSOLLOGBTF.xml</document>
       <id>ERPSOLLOGBTF</id>
     </task-flow-reference>
+    <input-parameter id="__4">
+      <name>P_ADF_USERCODE</name>
+      <value>#{viewScope.ERPSolLogViewBean.ERPSolStrUserCode}</value>
+    </input-parameter>
+    <input-parameter id="__5">
+      <name>P_ADF_USER_LOCATIONCODE</name>
+      <value>#{viewScope.ERPSolLogViewBean.ERPSolStrUserLocationCode}</value>
+    </input-parameter>
+    <input-parameter id="__6">
+      <name>P_ADF_USER_STORECODE</name>
+      <value>#{viewScope.ERPSolLogViewBean.ERPSolStrUserStoreCode}</value>
+    </input-parameter>
+    <input-parameter id="__7">
+      <name>P_ADF_USER_REGIONCODE</name>
+      <value>#{viewScope.ERPSolLogViewBean.ERPSolStrUserRegionCode}</value>
+    </input-parameter>
   </task-flow-call>
   <control-flow-rule id="__2">
     <from-activity-id>ERPSolLogin</from-activity-id>

@@ -17,6 +17,7 @@ public class SysUsersViewImpl extends ViewObjectImpl implements SysUsersView {
     }
     public String doERPSolutionLogin(String pUserCode, String pUserassword) {
         setWhereClause("Userid =UPPER('"+pUserCode+"') AND Password='"+pUserassword+"'");
+        System.out.println(getWhereClause());
         executeQuery();
         if (getRowCount()>0) {
             return "ERPSOLYES";

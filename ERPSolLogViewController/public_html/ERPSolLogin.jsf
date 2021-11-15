@@ -25,7 +25,7 @@
                         <af:spacer width="10" height="10" id="s6"/>
                     </af:gridCell>
                     <af:gridCell marginStart="5px" width="33%" id="gc5">
-                        <af:panelBox text="Welcome to ERP Solution Login " id="pb1" disclosed="false"
+                        <af:panelBox text="Welcome to ERP Solution Login " id="pb1"
                                      showDisclosure="false">
                             <f:facet name="toolbar"/>
                             <af:panelFormLayout id="pfl1">
@@ -34,8 +34,7 @@
                                               required="#{bindings.Locationid.hints.mandatory}"
                                               columns="#{bindings.Locationid.hints.displayWidth}"
                                               maximumLength="#{bindings.Locationid.hints.precision}"
-                                              shortDesc="#{bindings.Locationid.hints.tooltip}" id="it6"
-                                              rendered="false"
+                                              shortDesc="#{bindings.Locationid.hints.tooltip}" id="it6" rendered="false"
                                               binding="#{viewScope.ERPSolLogViewBean.ERPSolUserLocationCode}">
                                     <f:validator binding="#{bindings.Locationid.validator}"/>
                                 </af:inputText>
@@ -62,8 +61,8 @@
                                               required="#{bindings.return.hints.mandatory}"
                                               columns="#{bindings.return.hints.displayWidth}"
                                               maximumLength="#{bindings.return.hints.precision}"
-                                              shortDesc="#{bindings.return.hints.tooltip}" id="it3"
-                                              rendered="false">
+                                              shortDesc="#{bindings.return.hints.tooltip}" id="it3" rendered="false"
+                                              binding="#{viewScope.ERPSolLogViewBean.ERPSolResult}">
                                     <f:validator binding="#{bindings.return.validator}"/>
                                 </af:inputText>
                                 <af:inputText value="#{bindings.pUserCode.inputValue}" label="Login ID"
@@ -86,8 +85,7 @@
                                 <af:button text="Sign In" id="b2"
                                            action="#{viewScope.ERPSolLogViewBean.doLoginERPSolApp}"/>
                                 <af:button actionListener="#{bindings.doERPSolutionLogin.execute}" text="Login"
-                                           disabled="#{!bindings.doERPSolutionLogin.enabled}" id="b1"
-                                           rendered="false"/>
+                                           disabled="#{!bindings.doERPSolutionLogin.enabled}" id="b1" rendered="false"/>
                             </af:panelFormLayout>
                         </af:panelBox>
                     </af:gridCell>
@@ -97,18 +95,13 @@
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow id="gr3" height="15%">
-                    <af:gridCell id="gc7" halign="stretch"/>
-                    <af:gridCell id="gc8" halign="stretch">
+                    <af:gridCell id="gc7" halign="stretch" width="34%"/>
+                    <af:gridCell id="gc8" halign="stretch" width="33%">
                         <af:spacer width="10" height="10" id="s5"/>
                     </af:gridCell>
-                    <af:gridCell id="gc9"  halign="stretch"/>
+                    <af:gridCell id="gc9"  halign="stretch" width="33%"/>
                 </af:gridRow>
             </af:panelGridLayout>
-            <af:decorativeBox id="db1" theme="medium"
-                              dimensionsFrom="parent" rendered="false">
-                <f:facet name="center"/>
-                <f:facet name="top"/>
-            </af:decorativeBox>
         </af:form>
     </af:document>
 </f:view>
