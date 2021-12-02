@@ -4,7 +4,7 @@
     <af:document title="ERPSolLogin.jsf" id="d1" >
         <af:messages  id="m1"/>
         <af:form id="f1">
-            <af:panelGridLayout id="pgl1" >
+            <af:panelGridLayout id="pgl1" inlineStyle="background-color:#f7f7f7">
                 <af:gridRow marginTop="5px" id="gr1" height="10%">
                     <af:gridCell id="gc2" width="40%"
                                  halign="stretch" valign="stretch">

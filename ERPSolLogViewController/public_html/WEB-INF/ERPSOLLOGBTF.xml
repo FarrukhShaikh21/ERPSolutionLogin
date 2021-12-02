@@ -66,6 +66,50 @@
         <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserRegionCode}</value>
       </input-parameter>
     </task-flow-call>
+    <task-flow-call id="ERPSOLFMSBTF">
+      <task-flow-reference>
+        <document>/WEB-INF/ERPSOLFMSBTF.xml</document>
+        <id>ERPSOLFMSBTF</id>
+      </task-flow-reference>
+      <input-parameter id="__19">
+        <name>P_ADF_USERCODE</name>
+        <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserCode}</value>
+      </input-parameter>
+      <input-parameter id="__20">
+        <name>P_ADF_USER_LOCATIONCODE</name>
+        <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserLocationCode}</value>
+      </input-parameter>
+      <input-parameter id="__21">
+        <name>P_ADF_USER_STORECODE</name>
+        <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserStoreCode}</value>
+      </input-parameter>
+      <input-parameter id="__22">
+        <name>P_ADF_USER_REGIONCODE</name>
+        <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserRegionCode}</value>
+      </input-parameter>
+    </task-flow-call>
+    <task-flow-call id="ERPSOLWCPBTF">
+      <task-flow-reference>
+        <document>/WEB-INF/ERPSOLWCPBTF.xml</document>
+        <id>ERPSOLWCPBTF</id>
+      </task-flow-reference>
+      <input-parameter id="__24">
+        <name>P_ADF_USERCODE</name>
+        <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserCode}</value>
+      </input-parameter>
+      <input-parameter id="__25">
+        <name>P_ADF_USER_LOCATIONCODE</name>
+        <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserLocationCode}</value>
+      </input-parameter>
+      <input-parameter id="__26">
+        <name>P_ADF_USER_STORECODE</name>
+        <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserStoreCode}</value>
+      </input-parameter>
+      <input-parameter id="__27">
+        <name>P_ADF_USER_REGIONCODE</name>
+        <value>pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserRegionCode</value>
+      </input-parameter>
+    </task-flow-call>
     <control-flow-rule id="__6">
       <from-activity-id>doSetERPSolLoginSessionGlobals</from-activity-id>
       <control-flow-case id="__7">
@@ -79,11 +123,26 @@
         <from-outcome>ACT-ERPSOL-GOTO-SCM</from-outcome>
         <to-activity-id>ERPSOLSCMBTF</to-activity-id>
       </control-flow-case>
+      <control-flow-case id="__16">
+        <from-outcome>ACT-ERPSOL-GOTO-FMS</from-outcome>
+        <to-activity-id>ERPSOLFMSBTF</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__23">
+        <from-outcome>ACT-ERPSOL-GOTO-WCP</from-outcome>
+        <to-activity-id>ERPSOLWCPBTF</to-activity-id>
+      </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__14">
       <from-activity-id>ERPSOLSCMBTF</from-activity-id>
       <control-flow-case id="__15">
         <from-outcome>ERPSOL-RETURN-FROM-SCM</from-outcome>
+        <to-activity-id>ERPSolMain</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__17">
+      <from-activity-id>ERPSOLFMSBTF</from-activity-id>
+      <control-flow-case id="__18">
+        <from-outcome>RETURN-FROM-FMS</from-outcome>
         <to-activity-id>ERPSolMain</to-activity-id>
       </control-flow-case>
     </control-flow-rule>

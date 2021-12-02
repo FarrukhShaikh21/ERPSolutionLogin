@@ -3,6 +3,7 @@
    <classPath>
       <entries>
          <Item path="../ERPSolLOGLib/ERPSolGlobalModelLib.jar" jar-entry=""/>
+         <Item path="../ERPSolLOGLib/ERPSolGlobalViewLib.jar" jar-entry=""/>
       </entries>
    </classPath>
    <docPath/>

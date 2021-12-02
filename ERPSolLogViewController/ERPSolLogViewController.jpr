@@ -303,6 +303,14 @@
             <value n="id" v="ERPSolTemplateView.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="ERPSolFMSViewLib.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ERPSolWCPViewLib.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
       <hash n="internalDefinitions">
          <list n="libraryDefinitions">
@@ -322,6 +330,24 @@
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="ERPSolTemplateView.jar"/>
                <value n="id" v="ERPSolTemplateView.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../ERPSolLOGLib/ERPSolFMSViewLib.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="ERPSolFMSViewLib.jar"/>
+               <value n="id" v="ERPSolFMSViewLib.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../ERPSolLOGLib/ERPSolWCPViewLib.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="ERPSolWCPViewLib.jar"/>
+               <value n="id" v="ERPSolWCPViewLib.jar"/>
                <value n="locked" v="true"/>
             </hash>
          </list>
@@ -453,6 +479,14 @@
          </hash>
          <hash>
             <url n="id" path="ADF_Library_Dependencies.library"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ERPSolFMSViewLib.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ERPSolWCPViewLib.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
