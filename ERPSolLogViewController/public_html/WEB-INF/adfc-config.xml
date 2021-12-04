@@ -32,6 +32,13 @@
       <to-activity-id>ERPSOLLOGBTF</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
+  <control-flow-rule id="__8">
+    <from-activity-id>ERPSOLLOGBTF</from-activity-id>
+    <control-flow-case id="__9">
+      <from-outcome>ERPSolLoginReturn</from-outcome>
+      <to-activity-id>ERPSolLogin</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
   <managed-bean id="__1">
     <managed-bean-name>ERPSolLogViewBean</managed-bean-name>
     <managed-bean-class>erpsollog.erpsollogview.erpsollogclass.ERPSolLoginBean</managed-bean-class>

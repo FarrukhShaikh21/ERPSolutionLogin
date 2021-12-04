@@ -6,7 +6,7 @@
         <af:form id="f1">
             <af:decorativeBox id="db1" dimensionsFrom="parent">
                 <f:facet name="center">
-                    <af:panelGridLayout id="pgl1" inlineStyle='background-image:url("imgLogin.jpg");'>
+                    <af:panelGridLayout id="pgl1" styleClass="ERPLoginBackgroundImage">
                         <af:gridRow marginTop="5px" id="gr1" height="10%">
                             <af:gridCell id="gc2" width="40%" halign="stretch" valign="stretch">
                                 <af:spacer width="10" height="10" id="s1"/>

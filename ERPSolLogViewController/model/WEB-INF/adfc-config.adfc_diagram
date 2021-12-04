@@ -44,4 +44,14 @@
       <property
          name="sdm:polyPoints">R50,311.68945,248.44824,454.3457,277.79883,L50</property>
    </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="TaskFlowCall3"
+      to="View2">
+      <property
+         name="fromOutcome">ERPSolLoginReturn</property>
+      <property
+         name="sdm:polyPoints">L54,453.63132,281.29883,311.68945,251.94824,R54</property>
+   </ControlFlowCase>
 </SDM>

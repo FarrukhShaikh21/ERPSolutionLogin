@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="ERPSOLLOGBTF">
-    <default-activity>doSetERPSolLoginSessionGlobals</default-activity>
+    <default-activity>doERPSolHideMenu</default-activity>
     <data-control-scope>
       <shared/>
     </data-control-scope>
@@ -28,6 +28,11 @@
     <managed-bean id="__2">
       <managed-bean-name>ERPSolLogPageFlowBean</managed-bean-name>
       <managed-bean-class>erpsollog.erpsollogview.erpsollogclass.ERPSolLoginBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__28">
+      <managed-bean-name>ERPSolTempBean</managed-bean-name>
+      <managed-bean-class>erpsoltemp.erpsoltempview.erptempclass.ERPSolutionTemplateBean</managed-bean-class>
       <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
     <view id="ERPSolMain">
@@ -110,6 +115,12 @@
         <value>pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserRegionCode</value>
       </input-parameter>
     </task-flow-call>
+    <method-call id="doERPSolHideMenu">
+      <method>#{pageFlowScope.ERPSolTempBean.doERPSolSetMenuOff}</method>
+      <outcome>
+        <fixed-outcome>ACT-ERPSOL-GOTO-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__6">
       <from-activity-id>doSetERPSolLoginSessionGlobals</from-activity-id>
       <control-flow-case id="__7">
@@ -131,6 +142,10 @@
         <from-outcome>ACT-ERPSOL-GOTO-WCP</from-outcome>
         <to-activity-id>ERPSOLWCPBTF</to-activity-id>
       </control-flow-case>
+      <control-flow-case id="__35">
+        <from-outcome>ACT-ERP-SOL-LOGOUT</from-outcome>
+        <to-activity-id>ERPSolLoginReturn</to-activity-id>
+      </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__14">
       <from-activity-id>ERPSOLSCMBTF</from-activity-id>
@@ -138,12 +153,34 @@
         <from-outcome>ERPSOL-RETURN-FROM-SCM</from-outcome>
         <to-activity-id>ERPSolMain</to-activity-id>
       </control-flow-case>
+      <control-flow-case id="__31">
+        <from-outcome>ACT-ERP-SOL-LOGOUT</from-outcome>
+        <to-activity-id>ERPSolLoginReturn</to-activity-id>
+      </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__17">
       <from-activity-id>ERPSOLFMSBTF</from-activity-id>
       <control-flow-case id="__18">
         <from-outcome>RETURN-FROM-FMS</from-outcome>
         <to-activity-id>ERPSolMain</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__34">
+        <from-outcome>ACT-ERP-SOL-LOGOUT</from-outcome>
+        <to-activity-id>ERPSolLoginReturn</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__29">
+      <from-activity-id>doERPSolHideMenu</from-activity-id>
+      <control-flow-case id="__30">
+        <from-outcome>ACT-ERPSOL-GOTO-MAIN</from-outcome>
+        <to-activity-id>doSetERPSolLoginSessionGlobals</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__32">
+      <from-activity-id>ERPSOLWCPBTF</from-activity-id>
+      <control-flow-case id="__33">
+        <from-outcome>ACT-ERP-SOL-LOGOUT</from-outcome>
+        <to-activity-id>ERPSolLoginReturn</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
   </task-flow-definition>

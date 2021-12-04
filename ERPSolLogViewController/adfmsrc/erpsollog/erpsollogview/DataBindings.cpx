@@ -3,9 +3,11 @@
              SeparateXMLFiles="false" Package="erpsollog.erpsollogview" ClientType="Generic">
   <pageMap>
     <page path="/ERPSolLogin.jsf" usageId="erpsollog_erpsollogview_ERPSolLoginPageDef"/>
+    <page path="/ERPSolMain.jsf" usageId="erpsollog_erpsollogview_ERPSolMainPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpsollog_erpsollogview_ERPSolLoginPageDef" path="erpsollog.erpsollogview.pageDefs.ERPSolLoginPageDef"/>
+    <page id="erpsollog_erpsollogview_ERPSolMainPageDef" path="erpsollog.erpsollogview.pageDefs.ERPSolMainPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPSolLoginAppModuleDataControl" Package="erpsollog.erpsollogmodel.erpsolloginam"

@@ -65,3 +65,8 @@ background-image:url("../../imgSupplyChain.jpg");
 height:300px; width:500px; background-repeat:no-repeat;
 background-size: cover;
 }
+
+.ERPLoginBackgroundImage{
+    background-image:url("../../imgLogin.jpg");
+    /*background-size: cover;*/
+}

@@ -25,7 +25,7 @@ public class ERPSolLoginBean {
    RichInputText ERPSolUserRegionCode;
    RichInputText ERPSolUserStoreCode;
    
-    String ERPSolStrUserCode;
+    String ERPSolStrUserCode="";
     String ERPSolStrUserLocationCode;
     String ERPSolStrUserRegionCode;
     String ERPSolStrUserStoreCode;
@@ -124,7 +124,7 @@ public class ERPSolLoginBean {
     }
 
     public String getERPSolStrUserCode() {
-        return ERPSolStrUserCode;
+        return ERPSolStrUserCode.toUpperCase();
     }
 
     public void setERPSolStrUserLocationCode(String ERPSolStrUserLocationCode) {

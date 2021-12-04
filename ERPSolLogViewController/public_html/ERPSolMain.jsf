@@ -4,63 +4,71 @@
         xmlns:h="http://java.sun.com/jsf/html">
     <af:document title="ERPSolMain.jsf" id="d1">
         <af:form id="f1">
-            <af:decorativeBox id="db1" topHeight="100px" dimensionsFrom="parent">
-                <f:facet name="center">
-                    <af:panelGridLayout id="pgl1">
-                        <af:gridRow marginTop="5px" id="gr1">
-                            <af:gridCell marginStart="5px" width="25%" id="gc1" halign="stretch" valign="stretch">
-                                <af:panelBox text="Supply Chain Management" id="pb3" showDisclosure="false">
-                                    <f:facet name="toolbar"/>
-                                    <h:commandLink value="" id="cl1" action="ACT-ERPSOL-GOTO-SCM">
-                                        <af:image source="/imgSupplyChain.jpg" id="i1" styleClass="AFStretchWidth"/>
-                                    </h:commandLink>
-                                </af:panelBox>
-                                <af:button id="b1" action="ACT-ERPSOL-GOTO-SCM"
-                                           styleClass="ERPSolButtonImage" rendered="false"/>
-                            </af:gridCell>
-                            <af:gridCell marginStart="5px" width="25%" id="gc2" halign="stretch" valign="stretch"
-                                         marginEnd="5px">
-                                <af:panelBox text="Financial Management" id="pb2" showDisclosure="false">
-                                    <f:facet name="toolbar"/>
-                                    <h:commandLink value="" id="cl2" action="ACT-ERPSOL-GOTO-FMS">
-                                        <af:image id="i2" styleClass="AFStretchWidth"
-                                                  source="#{resource['images:imgFinance.jpg']}"/>
-                                    </h:commandLink>
-                                </af:panelBox>
-                            </af:gridCell>
-                            <af:gridCell marginStart="5px" width="25%" marginEnd="5px" id="gc3" halign="stretch"
-                                         valign="stretch">
-                                <af:panelBox text="Warranty Card Printing" id="pb1" showDisclosure="false">
-                                    <f:facet name="toolbar"/>
-                                    <h:commandLink value="" id="cl3" action="ACT-ERPSOL-GOTO-WCP">
-                                        <af:image source="#{resource['images:imgWarrantyCard.jpg']}" id="i3"
-                                                  styleClass="AFStretchWidth"/>
-                                    </h:commandLink>
-                                </af:panelBox>
-                            </af:gridCell>
-                            <af:gridCell id="gc4" width="25%" halign="stretch" valign="stretch"/>
-                        </af:gridRow>
-                    </af:panelGridLayout>
+            <af:pageTemplate viewId="/ERPSolutionTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
+                <f:facet name="erptempmain">
+                    <af:decorativeBox id="db1" topHeight="100px" dimensionsFrom="parent">
+                        <f:facet name="center">
+                            <af:panelGridLayout id="pgl1">
+                                <af:gridRow marginTop="5px" id="gr1">
+                                    <af:gridCell marginStart="5px" width="25%" id="gc1" halign="stretch"
+                                                 valign="stretch">
+                                        <af:panelBox text="Supply Chain Management" id="pb3" showDisclosure="false">
+                                            <f:facet name="toolbar"/>
+                                            <h:commandLink value="" id="cl1" action="ACT-ERPSOL-GOTO-SCM">
+                                                <af:image source="/imgSupplyChain.jpg" id="i1"
+                                                          styleClass="AFStretchWidth"/>
+                                            </h:commandLink>
+                                        </af:panelBox>
+                                        <af:button id="b1" action="ACT-ERPSOL-GOTO-SCM" styleClass="ERPSolButtonImage"
+                                                   rendered="false"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="5px" width="25%" id="gc2" halign="stretch"
+                                                 valign="stretch" marginEnd="5px">
+                                        <af:panelBox text="Financial Management" id="pb2" showDisclosure="false">
+                                            <f:facet name="toolbar"/>
+                                            <h:commandLink value="" id="cl2" action="ACT-ERPSOL-GOTO-FMS">
+                                                <af:image id="i2" styleClass="AFStretchWidth"
+                                                          source="#{resource['images:imgFinance.jpg']}"/>
+                                            </h:commandLink>
+                                        </af:panelBox>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="5px" width="25%" marginEnd="5px" id="gc3" halign="stretch"
+                                                 valign="stretch">
+                                        <af:panelBox text="Warranty Card Printing" id="pb1" showDisclosure="false">
+                                            <f:facet name="toolbar"/>
+                                            <h:commandLink value="" id="cl3" action="ACT-ERPSOL-GOTO-WCP">
+                                                <af:image source="#{resource['images:imgWarrantyCard.jpg']}" id="i3"
+                                                          styleClass="AFStretchWidth"/>
+                                            </h:commandLink>
+                                        </af:panelBox>
+                                    </af:gridCell>
+                                    <af:gridCell id="gc4" width="25%" halign="stretch" valign="stretch"/>
+                                </af:gridRow>
+                            </af:panelGridLayout>
+                        </f:facet>
+                        <f:facet name="top">
+                            <af:panelGridLayout id="pgl3" rendered="false">
+                                <af:gridRow height="auto" id="gr2">
+                                    <af:gridCell marginStart="5px" width="10%" id="gc5" valign="stretch"
+                                                 halign="stretch">
+                                        <af:image source="#{resource['images:imgTheCompanyLogo.png']}" id="i4"
+                                                  inlineStyle="width:200px"/>
+                                    </af:gridCell>
+                                    <af:gridCell width="45%" id="gc6" valign="middle" halign="end">
+                                        <af:outputText value="MODULES" id="ot1"
+                                                       inlineStyle="font-size:xx-large;color:black"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="5px" width="45%" marginEnd="5px" id="gc7" valign="stretch"
+                                                 halign="stretch">
+                                        <af:spacer width="10" height="10" id="s1"/>
+                                    </af:gridCell>
+                                </af:gridRow>
+                            </af:panelGridLayout>
+                        </f:facet>
+                    </af:decorativeBox>
                 </f:facet>
-                <f:facet name="top">
-                    <af:panelGridLayout id="pgl3">
-                        <af:gridRow height="auto" id="gr2">
-                            <af:gridCell marginStart="5px" width="10%" id="gc5" valign="stretch" halign="stretch">
-                                <af:image source="#{resource['images:imgTheCompanyLogo.png']}" id="i4"
-                                          inlineStyle="width:200px"/>
-                            </af:gridCell>
-                            <af:gridCell width="45%" id="gc6" valign="middle" halign="end">
-                                <af:outputText value="MODULES" id="ot1"
-                                               inlineStyle="font-size:xx-large;color:black"/>
-                            </af:gridCell>
-                            <af:gridCell marginStart="5px" width="45%" marginEnd="5px" id="gc7"
-                                         valign="stretch" halign="stretch">
-                                <af:spacer width="10" height="10" id="s1"/>
-                            </af:gridCell>
-                        </af:gridRow>
-                    </af:panelGridLayout>
-                </f:facet>
-            </af:decorativeBox>
+                <f:facet name="erptempleft"/>
+            </af:pageTemplate>
         </af:form>
     </af:document>
 </f:view>
