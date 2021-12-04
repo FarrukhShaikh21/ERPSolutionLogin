@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
-    <af:document title="ERPSolLogin.jsf" id="d1" >
+    <af:document title="ERPSolLogin.jsf" id="d1" initialFocusId="it1">
         <af:messages  id="m1"/>
         <af:form id="f1">
             <af:decorativeBox id="db1" dimensionsFrom="parent">
@@ -75,7 +75,8 @@
                                                       shortDesc="#{bindings.pUserCode.hints.tooltip}" id="it1"
                                                       contentStyle="text-transform:uppercase"
                                                       binding="#{viewScope.ERPSolLogViewBean.ERPSolUserCode}"
-                                                      labelStyle="font-weight:bold;color:#357bae">
+                                                      labelStyle="font-weight:bold;color:#357bae"
+                                                      clientComponent="true">
                                             <f:validator binding="#{bindings.pUserCode.validator}"/>
                                         </af:inputText>
                                         <af:inputText value="#{bindings.pUserassword.inputValue}" label="Password"
