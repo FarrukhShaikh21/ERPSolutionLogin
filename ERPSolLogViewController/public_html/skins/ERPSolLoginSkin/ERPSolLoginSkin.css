@@ -53,6 +53,13 @@ af|inputComboboxListOfValues::content{
     font-weight: bold;
 }
 
+
+af|selectOneChoice::content{
+    height:25px;
+    font-weight: bold;
+}
+
+
 .ERPSolFormEntryAreaHeader{
     background-color:#84bbe6
 }
