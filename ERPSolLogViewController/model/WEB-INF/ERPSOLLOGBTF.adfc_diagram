@@ -84,7 +84,7 @@
       <property
          name="fromOutcome">ACT-ERPSOL-GOTO-SCM</property>
       <property
-         name="sdm:polyPoints">R42,281.80487,348.64355,861.8301,348.6953,L50</property>
+         name="sdm:polyPoints">R54,281.68842,359.14355,863.0078,355.6953,L58</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -94,7 +94,7 @@
       <property
          name="fromOutcome">ERPSOL-RETURN-FROM-SCM</property>
       <property
-         name="sdm:polyPoints">L58,861.8298,355.6953,281.80457,355.64355,R50</property>
+         name="sdm:polyPoints">L50,862.98706,348.6953,281.66766,352.14355,R46</property>
    </ControlFlowCase>
    <TaskFlowCall
       id="TaskFlowCall9">
@@ -121,7 +121,7 @@
       <property
          name="fromOutcome">ACT-ERPSOL-GOTO-FMS</property>
       <property
-         name="sdm:polyPoints">B44,236.51367,413.37836,393.24173,517.2988,L54</property>
+         name="sdm:polyPoints">B56,243.51367,413.28217,393.1591,517.2988,L54</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -131,7 +131,7 @@
       <property
          name="fromOutcome">RETURN-FROM-FMS</property>
       <property
-         name="sdm:polyPoints">L46,395.33984,510.29883,243.51367,409.64355,B56</property>
+         name="sdm:polyPoints">L46,395.33984,510.29883,250.51367,409.64355,B67</property>
    </ControlFlowCase>
    <TaskFlowCall
       id="TaskFlowCall12">
@@ -158,7 +158,7 @@
       <property
          name="fromOutcome">ACT-ERPSOL-GOTO-WCP</property>
       <property
-         name="sdm:polyPoints">R58,281.01367,362.64355,707.67285,565.7988,L50</property>
+         name="sdm:polyPoints">R62,281.01367,366.14355,707.67285,565.7988,L50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall14">
@@ -224,5 +224,42 @@
          name="fromOutcome">ACT-ERP-SOL-LOGOUT</property>
       <property
          name="sdm:polyPoints">R38,281.01367,345.14355,617.0,217.24707,L50</property>
+   </ControlFlowCase>
+   <TaskFlowCall
+      id="TaskFlowCall21">
+      <property
+         name="taskFlowId">ERPSOLIMSBTF</property>
+      <property
+         name="activityId">ERPSOLIMSBTF</property>
+      <property
+         name="documentReference">/WEB-INF/ERPSOLIMSBTF.xml</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ERPSOLIMSBTF&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">548.1494</property>
+      <property
+         name="x">149.3418</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase22"
+      from="View2"
+      to="TaskFlowCall21">
+      <property
+         name="fromOutcome">ACT-ERPSOL-GOTO-IMS</property>
+      <property
+         name="sdm:polyPoints">B33,229.51367,409.64355,145.8418,490.87527,T44</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase23"
+      from="TaskFlowCall21"
+      to="View2">
+      <property
+         name="fromOutcome">ERPSOL-RETURN-FROM-IMS</property>
+      <property
+         name="sdm:polyPoints">T56,152.8418,493.79883,236.51367,412.53125,B44</property>
    </ControlFlowCase>
 </SDM>
