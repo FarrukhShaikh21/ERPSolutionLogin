@@ -9,10 +9,11 @@
                     <af:decorativeBox id="db1" topHeight="100px" dimensionsFrom="parent">
                         <f:facet name="center">
                             <af:panelGridLayout id="pgl1">
-                                <af:gridRow marginTop="5px" id="gr1">
-                                    <af:gridCell marginStart="5px" width="25%" id="gc1" halign="stretch"
+                                <af:gridRow marginTop="50px" id="gr1" height="200px" marginBottom="50px">
+                                    <af:gridCell marginStart="5px" width="34%" id="gc1" halign="stretch"
                                                  valign="stretch">
-                                        <af:panelBox text="Supply Chain Management" id="pb3" showDisclosure="false">
+                                        <af:panelBox text="Supply Chain Management" id="pb3" showDisclosure="false"
+                                                     inlineStyle="HEIGHT:200PX">
                                             <f:facet name="toolbar"/>
                                             <h:commandLink value="" id="cl1" action="ACT-ERPSOL-GOTO-SCM">
                                                 <af:image source="/imgSupplyChain.jpg" id="i1"
@@ -22,7 +23,7 @@
                                         <af:button id="b1" action="ACT-ERPSOL-GOTO-SCM" styleClass="ERPSolButtonImage"
                                                    rendered="false"/>
                                     </af:gridCell>
-                                    <af:gridCell marginStart="5px" width="25%" id="gc2" halign="stretch"
+                                    <af:gridCell marginStart="5px" width="33%" id="gc2" halign="stretch"
                                                  valign="stretch" marginEnd="5px">
                                         <af:panelBox text="Financial Management" id="pb2" showDisclosure="false">
                                             <f:facet name="toolbar"/>
@@ -32,7 +33,7 @@
                                             </h:commandLink>
                                         </af:panelBox>
                                     </af:gridCell>
-                                    <af:gridCell marginStart="5px" width="25%" marginEnd="5px" id="gc3" halign="stretch"
+                                    <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc3" halign="stretch"
                                                  valign="stretch">
                                         <af:panelBox text="Warranty Card Printing" id="pb1" showDisclosure="false">
                                             <f:facet name="toolbar"/>
@@ -42,7 +43,19 @@
                                             </h:commandLink>
                                         </af:panelBox>
                                     </af:gridCell>
-                                    <af:gridCell id="gc4" width="25%" halign="stretch" valign="stretch"/>
+                                </af:gridRow>
+                                <af:gridRow id="gr3" height="200px">
+                                    <af:gridCell id="gc4" width="34%" halign="stretch" valign="stretch">
+                                        <af:panelBox text="Inventory Management System" id="pb4" showDisclosure="false">
+                                            <f:facet name="toolbar"/>
+                                            <h:commandLink value="" id="cl4" action="ACT-ERPSOL-GOTO-IMS">
+                                                <af:image source="#{resource['images:imgInvengory.jpg']}" id="i5"
+                                                          styleClass="AFStretchWidth"/>
+                                            </h:commandLink>
+                                        </af:panelBox>
+                                    </af:gridCell>
+                                    <af:gridCell id="gc8" width="33%"/>
+                                    <af:gridCell id="gc9" width="33%"/>
                                 </af:gridRow>
                             </af:panelGridLayout>
                         </f:facet>

@@ -74,6 +74,17 @@ background-size: cover;
 }
 
 .ERPLoginBackgroundImage{
-    background-image:url("../../imgLogin.jpg");
-    /*background-size: cover;*/
+    /*background-image:url("../../imgLogin.jpg");*/
+    /*background-image: url("../../imgLoginBG.jpg");*/
+    background-image: url("../../imgLoginWhiteBG.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+
+
+.LoginTextBox af|inputText::content{    
+    height:25px;
+    font-weight: bold;
+    font-family: Verdana;
 }
