@@ -9,11 +9,11 @@
                     <af:decorativeBox id="db1" topHeight="100px" dimensionsFrom="parent">
                         <f:facet name="center">
                             <af:panelGridLayout id="pgl1">
-                                <af:gridRow marginTop="50px" id="gr1" height="200px" marginBottom="50px">
+                                <af:gridRow marginTop="10px" id="gr1" marginBottom="10px">
                                     <af:gridCell marginStart="5px" width="34%" id="gc1" halign="stretch"
                                                  valign="stretch">
                                         <af:panelBox text="Supply Chain Management" id="pb3" showDisclosure="false"
-                                                     inlineStyle="HEIGHT:200PX">
+                                                     type="stretch" styleClass="AFStretchWidth">
                                             <f:facet name="toolbar"/>
                                             <h:commandLink value="" id="cl1" action="ACT-ERPSOL-GOTO-SCM">
                                                 <af:image source="/imgSupplyChain.jpg" id="i1"
@@ -25,7 +25,8 @@
                                     </af:gridCell>
                                     <af:gridCell marginStart="5px" width="33%" id="gc2" halign="stretch"
                                                  valign="stretch" marginEnd="5px">
-                                        <af:panelBox text="Financial Management" id="pb2" showDisclosure="false">
+                                        <af:panelBox text="Financial Management" id="pb2" showDisclosure="false"
+                                                     type="stretch" styleClass="AFStretchWidth">
                                             <f:facet name="toolbar"/>
                                             <h:commandLink value="" id="cl2" action="ACT-ERPSOL-GOTO-FMS">
                                                 <af:image id="i2" styleClass="AFStretchWidth"
@@ -35,7 +36,8 @@
                                     </af:gridCell>
                                     <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc3" halign="stretch"
                                                  valign="stretch">
-                                        <af:panelBox text="Warranty Card Printing" id="pb1" showDisclosure="false">
+                                        <af:panelBox text="Warranty Card Printing" id="pb1" showDisclosure="false"
+                                                     styleClass="AFStretchWidth" type="stretch">
                                             <f:facet name="toolbar"/>
                                             <h:commandLink value="" id="cl3" action="ACT-ERPSOL-GOTO-WCP">
                                                 <af:image source="#{resource['images:imgWarrantyCard.jpg']}" id="i3"
@@ -44,9 +46,10 @@
                                         </af:panelBox>
                                     </af:gridCell>
                                 </af:gridRow>
-                                <af:gridRow id="gr3" height="200px">
+                                <af:gridRow id="gr3">
                                     <af:gridCell id="gc4" width="34%" halign="stretch" valign="stretch">
-                                        <af:panelBox text="Inventory Management System" id="pb4" showDisclosure="false">
+                                        <af:panelBox text="Inventory Management System" id="pb4" showDisclosure="false"
+                                                     styleClass="AFStretchWidth">
                                             <f:facet name="toolbar"/>
                                             <h:commandLink value="" id="cl4" action="ACT-ERPSOL-GOTO-IMS">
                                                 <af:image source="#{resource['images:imgInvengory.jpg']}" id="i5"
@@ -55,8 +58,18 @@
                                         </af:panelBox>
                                     </af:gridCell>
                                     <af:gridCell id="gc8" width="33%" halign="stretch" valign="stretch">
+                                        <af:panelBox text="General Ledger System" id="pb6" showDisclosure="false"
+                                                     styleClass="AFStretchWidth">
+                                            <f:facet name="toolbar"/>
+                                            <h:commandLink value="" id="cl6" action="ACT-ERPSOL-GOTO-GLS">
+                                                <af:image id="i7" source="#{resource['images:imgGeneralLedger.png']}"
+                                                          styleClass="AFStretchWidth"/>
+                                            </h:commandLink>
+                                        </af:panelBox>
+                                    </af:gridCell>
+                                    <af:gridCell id="gc9" width="33%">
                                         <af:panelBox text="Administration" id="pb5" showDisclosure="false"
-                                                     rendered="false">
+                                                     rendered="false" styleClass="AFStretchWidth">
                                             <f:facet name="toolbar"/>
                                             <h:commandLink value="" id="cl5">
                                                 <af:image source="#{resource['images:imgAdministration.jpg']}" id="i6"
@@ -64,7 +77,6 @@
                                             </h:commandLink>
                                         </af:panelBox>
                                     </af:gridCell>
-                                    <af:gridCell id="gc9" width="33%"/>
                                 </af:gridRow>
                             </af:panelGridLayout>
                         </f:facet>
