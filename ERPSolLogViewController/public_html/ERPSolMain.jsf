@@ -67,7 +67,16 @@
                                             </h:commandLink>
                                         </af:panelBox>
                                     </af:gridCell>
-                                    <af:gridCell id="gc9" width="33%">
+                                    <af:gridCell id="gc9" width="33%" halign="stretch" valign="stretch">
+                                        <af:panelBox text="Payable" id="pb7" showDisclosure="false"
+                                                     styleClass="AFStretchWidth">
+                                            <f:facet name="toolbar"/>
+                                            <h:commandLink value="" id="cl7">
+                                                <af:image id="i8"
+                                                          source="#{resource['images:imgAccountsPayable.jpg']}"
+                                                          styleClass="AFStretchWidth"/>
+                                            </h:commandLink>
+                                        </af:panelBox>
                                         <af:panelBox text="Administration" id="pb5" showDisclosure="false"
                                                      rendered="false" styleClass="AFStretchWidth">
                                             <f:facet name="toolbar"/>
