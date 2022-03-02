@@ -94,11 +94,30 @@ background-size: cover;
 .ERPLoginBackgroundImage{
     /*background-image:url("../../imgLogin.jpg");*/
     /*background-image: url("../../imgLoginBG.jpg");*/
-    background-image:url("../../imgLoginHawk.jpg");
+    /*background-image:url("../../imgLoginHawk.jpg");*/
+    background-image:url("../../imgLoginBackground.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
+.ERPLogoTransparentColor
+{
+    background-color: rgba(244, 244, 244, 0.3);
+    
+}
 
+
+af|button.ERPSolSignInButton
+{
+    width:205px;height:40px; 
+    text-align:center; 
+    color:white; 
+    padding-top: 6px;
+    font:normal normal normal medium/normal;
+    vertical-align: text-bottom;
+    font-size: large;
+    background-image: none;
+    background-color: rgb(57,96,165);
+}
 
 
 .LoginTextBox af|inputText::content{    
