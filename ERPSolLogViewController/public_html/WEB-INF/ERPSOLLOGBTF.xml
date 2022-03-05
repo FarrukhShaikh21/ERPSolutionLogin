@@ -187,6 +187,28 @@
         <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserRegionCode}</value>
       </input-parameter>
     </task-flow-call>
+    <task-flow-call id="ERPSOLAMSBTF">
+      <task-flow-reference>
+        <document>/WEB-INF/ERPSOLAMSBTF.xml</document>
+        <id>ERPSOLAMSBTF</id>
+      </task-flow-reference>
+      <input-parameter id="__65">
+        <name>P_ADF_USERCODE</name>
+        <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserCode}</value>
+      </input-parameter>
+      <input-parameter id="__66">
+        <name>P_ADF_USER_LOCATIONCODE</name>
+        <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserLocationCode}</value>
+      </input-parameter>
+      <input-parameter id="__67">
+        <name>P_ADF_USER_STORECODE</name>
+        <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserStoreCode}</value>
+      </input-parameter>
+      <input-parameter id="__68">
+        <name>P_ADF_USER_REGIONCODE</name>
+        <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserRegionCode}</value>
+      </input-parameter>
+    </task-flow-call>
     <control-flow-rule id="__6">
       <from-activity-id>doSetERPSolLoginSessionGlobals</from-activity-id>
       <control-flow-case id="__7">
@@ -223,6 +245,10 @@
       <control-flow-case id="__52">
         <from-outcome>ACT-ERPSOL-GOTO-APS</from-outcome>
         <to-activity-id>ERPSOLAPSBTF</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__61">
+        <from-outcome>ACT-ERPSOL-GOTO-AMS</from-outcome>
+        <to-activity-id>ERPSOLAMSBTF</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__14">
@@ -294,6 +320,17 @@
         <to-activity-id>ERPSolMain</to-activity-id>
       </control-flow-case>
       <control-flow-case id="__55">
+        <from-outcome>ACT-ERP-SOL-LOGOUT</from-outcome>
+        <to-activity-id>ERPSolLoginReturn</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__62">
+      <from-activity-id>ERPSOLAMSBTF</from-activity-id>
+      <control-flow-case id="__63">
+        <from-outcome>RETURN-FROM-APS</from-outcome>
+        <to-activity-id>ERPSolMain</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__64">
         <from-outcome>ACT-ERP-SOL-LOGOUT</from-outcome>
         <to-activity-id>ERPSolLoginReturn</to-activity-id>
       </control-flow-case>

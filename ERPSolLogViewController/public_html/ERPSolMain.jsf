@@ -13,7 +13,7 @@
                                     <af:gridCell id="gc10" width="25%" halign="stretch" valign="stretch">
                                         <af:panelBox text="Administration" id="pb8" showDisclosure="false">
                                             <f:facet name="toolbar"/>
-                                            <h:commandLink value="" id="cl8">
+                                            <h:commandLink value="" id="cl8" action="ACT-ERPSOL-GOTO-AMS">
                                                 <af:image id="i9"
                                                           styleClass="AFStretchWidth"
                                                           source="#{resource['images:imgAdministration.png']}"/>
