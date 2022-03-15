@@ -7,29 +7,30 @@
             <af:decorativeBox id="db1" dimensionsFrom="parent">
                 <f:facet name="center">
                     <af:panelGridLayout id="pgl1" styleClass="ERPLoginBackgroundImage">
-                        <af:gridRow id="gr1" height="33%">
-                            <af:gridCell id="gc1"/>
+                        <af:gridRow id="gr1" height="30%">
+                            <af:gridCell id="gc1" rowSpan="1"/>
                         </af:gridRow>
-                        <af:gridRow id="gr2" height="34%">
+                        <af:gridRow id="gr2" height="40%">
                             <af:gridCell marginStart="200px" width="100%" id="gc5" halign="stretch" valign="stretch"
                                          marginEnd="200px" columnSpan="1">
                                 <af:panelGroupLayout id="pgl2" layout="vertical"
                                                      styleClass="ERPLogoTransparentColor AFStretchWidth">
                                     <af:panelGridLayout id="pgl3">
                                         <af:gridRow marginTop="60px" height="auto" marginBottom="5px" id="gr7">
-                                            <af:gridCell marginStart="50px" width="33%" id="gc7">
+                                            <af:gridCell marginStart="50px" width="33%" id="gc7" valign="middle">
                                                 <af:image id="i1" source="#{resource['images:imgHawkLogin.png']}"
-                                                          styleClass="AFStretchWidth"/>
+                                                          styleClass="AFStretchWidth"
+                                                          inlineStyle="width:256px;height:auto"/>
                                             </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="34%" id="gc8" valign="stretch">
+                                            <af:gridCell width="34%" id="gc8" valign="stretch" columnSpan="1">
                                                 <af:outputFormatted value="A comprehensive ERP  (Enterprise Resource Planning) &lt;BR> software system to facilitate the automation of business &lt;BR> procedures as Deploy PV Limited, Pakistan. &lt;BR>  &lt;BR> Developed and Maintained by the ICT team at  &lt;BR> Deploy Private Limited &lt;BR> &lt;BR> Version 1.0.101 &lt;BR> Deployment Date Dec 1, 2021" id="of1"
-                                                                    inlineStyle="font-size:medium; color:#565967;"/>
+                                                                    inlineStyle="font-size:small; color:#565967"/>
                                             </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc9"
-                                                         valign="stretch" halign="stretch">
+                                            <af:gridCell width="33%" marginEnd="5px" id="gc9"
+                                                         valign="stretch" halign="center" columnSpan="1">
                                                 <af:panelGridLayout id="pgl4">
                                                     <af:gridRow id="gr8" marginBottom="10px">
-                                                        <af:gridCell id="gc11">
+                                                        <af:gridCell id="gc11" halign="stretch" width="auto">
                                                             <af:outputText value="Welcome To HAWK" id="ot1"
                                                                            inlineStyle="font-size:large; color:#565967;font-weight:bold"/>
                                                         </af:gridCell>
@@ -135,7 +136,7 @@
                                 </af:panelGroupLayout>
                             </af:gridCell>
                         </af:gridRow>
-                        <af:gridRow id="gr3" height="33%">
+                        <af:gridRow id="gr3" height="30%">
                             <af:gridCell id="gc2"/>
                         </af:gridRow>
                     </af:panelGridLayout>

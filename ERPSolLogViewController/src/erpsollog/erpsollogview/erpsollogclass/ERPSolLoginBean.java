@@ -1,11 +1,18 @@
 package erpsollog.erpsollogview.erpsollogclass;
 
+import erpsolglob.erpsolglobview.erpclass.ERPSolGlobalViewBean;
+
+import java.sql.CallableStatement;
+
+import java.sql.SQLException;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
 import oracle.adf.model.BindingContext;
 
 import oracle.adf.model.OperationBinding;
+import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.share.ADFContext;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
 
@@ -13,6 +20,12 @@ import oracle.binding.BindingContainer;
 
 import oracle.binding.BindingContainer;
 
+import oracle.jbo.ApplicationModule;
+import oracle.jbo.server.DBTransaction;
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.myfaces.trinidad.context.Agent;
+import org.apache.myfaces.trinidad.context.RequestContext;
 
 public class ERPSolLoginBean {
     public ERPSolLoginBean() {
@@ -44,7 +57,7 @@ public class ERPSolLoginBean {
                 return null;
             }*/
             if (getERPSolResult().getValue().toString().equals("ERPSOLYES")) {
-                System.out.println("1");
+                
                setERPSolStrUserCode(getERPSolUserCode().getValue().toString());
                System.out.println("2");
                setERPSolStrUserLocationCode(getERPSolUserLocationCode().getValue().toString());
@@ -53,8 +66,48 @@ public class ERPSolLoginBean {
                System.out.println("4");
                setERPSolStrUserStoreCode(getERPSolUserStoreCode().getValue().toString());
                System.out.println("5");
-               
-                return "ACT-ERPSOLLOGIN";
+
+               RequestContext requestCtx = RequestContext.getCurrentInstance();
+                                  Agent agent = requestCtx.getAgent();
+                                  String version = agent.getAgentVersion();
+                                  String browser = agent.getAgentName();
+                                  String platform = agent.getPlatformName();
+                                  String platformVersion = agent.getPlatformVersion();
+                                  FacesContext fctx = FacesContext.getCurrentInstance();
+                                  HttpServletRequest request = (HttpServletRequest) fctx.getExternalContext().getRequest();
+                                  /*   StringBuilder detailMsg =
+                                      new StringBuilder("<html><body><b>Browser Agent and the the IP Address Details</b><br>");
+                                  detailMsg.append("<ul><li><b>Browser : </b>" + browser + "</li><li><b>Version-</b>" + version +
+                                                   "</li><li><b>Plateform : </b>" + platform + "</li>");
+                                  detailMsg.append("<li><b>Plateform Version : </b>" + platformVersion + "</li><li><b>Server IP : </b>" +
+                                                   request.getLocalAddr() + "</li><li><b>Client IP : </b>" + request.getRemoteAddr() +
+                                                   "</li></ul>");
+                                  detailMsg.append("</body></html>");
+                                  FacesMessage errMsg = new FacesMessage(detailMsg.toString());
+                                  errMsg.setSeverity(FacesMessage.SEVERITY_INFO);
+                                  fctx.addMessage(null, errMsg); */
+                                  
+               BindingContainer ERPSolbind = ERPSolGlobalViewBean.doGetERPBindings();
+               DCIteratorBinding ERPSolIter =(DCIteratorBinding) ERPSolbind.get("SysUsersLoginROIterator");
+               ApplicationModule ERPSolAm=ERPSolIter.getViewObject().getApplicationModule();
+               DBTransaction ERPSolDBT=(DBTransaction)ERPSolAm.getTransaction();
+               String ERPSolPLSQL="begin insert into sys_login_info(userid,  datetime,IP_ADDRESS,HOST_NAME,Os_Name,WINDOWS_VERSION,BROWSER_NAME) values ";
+               ERPSolPLSQL+= "(UPPER('"+getERPSolUserCode().getValue().toString()+"'),sysdate,'"+request.getLocalAddr()+"','"+request.getRemoteAddr()+"','"+platform+"','"+platformVersion+"','"+browser+"'); commit; end; ";
+               System.out.println(ERPSolPLSQL);
+               CallableStatement ERPSolCS = null;
+            try {
+                ERPSolCS=ERPSolDBT.createCallableStatement(ERPSolPLSQL, 1);
+                ERPSolCS.executeUpdate();
+            } catch (SQLException e) {
+                
+            }
+            finally{
+                try {
+                    ERPSolCS.close();
+                } catch (SQLException e) {
+                }
+            }
+            return "ACT-ERPSOLLOGIN";
            }
             else {
                 System.out.println("two");

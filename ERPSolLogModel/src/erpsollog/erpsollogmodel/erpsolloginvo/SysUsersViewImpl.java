@@ -24,7 +24,7 @@ public class SysUsersViewImpl extends ViewObjectImpl implements SysUsersView {
         System.out.println(getWhereClause());
         executeQuery();
         if (getRowCount()>0) {
-            String ERPSolPLSQL="begin insert into sys_login_info(userid,  datetime) values(UPPER('"+pUserCode+"'),sysdate); commit; end; ";
+            /* String ERPSolPLSQL="begin insert into sys_login_info(userid,  datetime) values(UPPER('"+pUserCode+"'),sysdate); commit; end; ";
             System.out.println(ERPSolPLSQL);
             CallableStatement cs=getDBTransaction().createCallableStatement(ERPSolPLSQL, 1);
             try {
@@ -36,7 +36,7 @@ public class SysUsersViewImpl extends ViewObjectImpl implements SysUsersView {
                     cs.close();
                 } catch (SQLException e) {
                 }
-            }
+            } */
             return "ERPSOLYES";
        }
         return "NO";
