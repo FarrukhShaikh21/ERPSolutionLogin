@@ -23,7 +23,7 @@ af|panelLabelAndMessage{
 
 
 af|inputText::label{
-    /*font-weight: bold;*/
+    font-weight: bold;
     color: Black;
     /*font-weight: bold;*/
     /*font-size: medium;*/
@@ -31,10 +31,17 @@ af|inputText::label{
 }
 
 
+af|inputText:read-only::label{
+    font-weight: bold;
+    color: Black;
+    /*font-weight: bold;*/
+    /*font-size: medium;*/
+    font-family: Verdana;
+}
 
 af|inputComboboxListOfValues::label{
     font-weight: bold;
-    color: Blue;
+    color: Black;
     font-weight: bold;
 }
 
