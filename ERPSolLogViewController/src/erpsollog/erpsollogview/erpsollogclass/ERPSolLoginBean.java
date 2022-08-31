@@ -26,6 +26,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.myfaces.trinidad.context.Agent;
 import org.apache.myfaces.trinidad.context.RequestContext;
+import org.apache.myfaces.trinidad.render.ExtendedRenderKitService;
+import org.apache.myfaces.trinidad.util.Service;
 
 public class ERPSolLoginBean {
     public ERPSolLoginBean() {
@@ -211,4 +213,16 @@ public class ERPSolLoginBean {
         ADFContext.getCurrent().getPageFlowScope().put("GLOB_USER_STORE", getERPSolStrUserStoreCode());
 
     }
+    
+    public String doOpenServiceModule() {
+        doErpSolOpenReportTab("http://127.0.0.1:7101/DigicomApplication-ViewController-context-root/faces/Login");
+        return null;
+    }
+    public void doErpSolOpenReportTab(String url) {
+    ExtendedRenderKitService erks =
+    Service.getRenderKitService(FacesContext.getCurrentInstance(), ExtendedRenderKitService.class);
+    StringBuilder strb = new StringBuilder("window.open('" + url + "');");
+    erks.addScript(FacesContext.getCurrentInstance(), strb.toString());
+    }  
+    
 }

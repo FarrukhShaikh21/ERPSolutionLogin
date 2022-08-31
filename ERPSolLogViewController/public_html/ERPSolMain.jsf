@@ -94,7 +94,18 @@
                                             </h:commandLink>
                                         </af:panelBox>
                                     </af:gridCell>
-                                    <af:gridCell id="gc11" width="25%"/>
+                                    <af:gridCell id="gc11" width="25%">
+                                        <af:panelBox text="Service" id="pb9" showDisclosure="false"
+                                                     styleClass="AFStretchWidth">
+                                            <f:facet name="toolbar"/>
+                                            <h:commandLink value="" id="cl9"
+                                                           action="#{pageFlowScope.ERPSolLogPageFlowBean.doOpenServiceModule}">
+                                                <af:image id="i10"
+                                                          styleClass="AFStretchWidth"
+                                                          source="#{resource['images:imgService.png']}"/>
+                                            </h:commandLink>                                            
+                                        </af:panelBox>
+                                    </af:gridCell>
                                 </af:gridRow>
                             </af:panelGridLayout>
                         </f:facet>
