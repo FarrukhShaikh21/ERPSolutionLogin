@@ -215,7 +215,7 @@ public class ERPSolLoginBean {
     }
     
     public String doOpenServiceModule() {
-        doErpSolOpenReportTab("http://127.0.0.1:7101/DigicomApplication-ViewController-context-root/faces/Login");
+        doErpSolOpenReportTab("http://app.deploy.com.pk:50500/DeployService/faces/Login");
         return null;
     }
     public void doErpSolOpenReportTab(String url) {
