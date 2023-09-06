@@ -115,7 +115,7 @@ public class ERPSolLoginBean {
                 System.out.println("two");
                 FacesContext context = FacesContext.getCurrentInstance();
                 System.out.println("three");
-                context.addMessage(null, new FacesMessage("Invalid Login Id / Password"));
+                context.addMessage(null, new FacesMessage(getERPSolResult().getValue().toString().equals("ERPSOLLOCK")?"Account Is Locked.":"Invalid Login Id / Password"));
                 System.out.println("four");
             }
             System.out.println("five");
