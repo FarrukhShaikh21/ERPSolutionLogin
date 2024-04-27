@@ -104,7 +104,17 @@
                                             </h:commandLink>
                                         </af:panelBox>
                                     </af:gridCell>
-                                    <af:gridCell id="gc11" width="20%" columnSpan="2" rowSpan="1">
+                                    <af:gridCell id="gc13" width="20%" halign="stretch" valign="stretch">
+                                        <af:panelBox text="WorkOrder Management Systen" id="pb12" showDisclosure="false">
+                                            <f:facet name="toolbar"/>
+                                            <h:commandLink value="" id="cl10">
+                                                <af:image source="#{resource['images:imgWorkOrder.jpg']}" id="i11"
+                                                          styleClass="AFStretchWidth"/>
+                                            </h:commandLink>
+                                        </af:panelBox>
+                                    </af:gridCell>
+                                    <af:gridCell id="gc11" width="20%" columnSpan="2" rowSpan="1" halign="stretch"
+                                                 valign="stretch">
                                         <af:panelBox text="Service" id="pb9" showDisclosure="false"
                                                      styleClass="AFStretchWidth">
                                             <f:facet name="toolbar"/>
