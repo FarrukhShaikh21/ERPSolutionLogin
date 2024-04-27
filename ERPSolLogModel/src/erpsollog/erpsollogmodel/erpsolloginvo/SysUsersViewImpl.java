@@ -19,12 +19,11 @@ public class SysUsersViewImpl extends ViewObjectImpl implements SysUsersView {
      */
     public SysUsersViewImpl() {
     }
-
     public String doERPSolutionLogin(String pUserCode, String pUserassword) {
-        setWhereClause("Userid =UPPER('" + pUserCode + "') AND Password='" + pUserassword + "'");
+        setWhereClause("Userid =UPPER('"+pUserCode+"') AND Password='"+pUserassword+"'");
         System.out.println(getWhereClause());
         executeQuery();
-        if (getRowCount() > 0) {
+        if (getRowCount()>0) {
             /* String ERPSolPLSQL="begin insert into sys_login_info(userid,  datetime) values(UPPER('"+pUserCode+"'),sysdate); commit; end; ";
             System.out.println(ERPSolPLSQL);
             CallableStatement cs=getDBTransaction().createCallableStatement(ERPSolPLSQL, 1);
@@ -39,10 +38,10 @@ public class SysUsersViewImpl extends ViewObjectImpl implements SysUsersView {
                 }
             } */
             if (first().getAttribute("ActiveStatus").toString().equals("N")) {
-                return "ERPSOLLOCK";
-            }
+               return "ERPSOLLOCK";
+           }
             return "ERPSOLYES";
-        }
+       }
         return "NO";
     }
 }

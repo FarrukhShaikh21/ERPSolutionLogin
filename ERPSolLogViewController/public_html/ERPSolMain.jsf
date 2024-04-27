@@ -10,7 +10,7 @@
                         <f:facet name="center">
                             <af:panelGridLayout id="pgl1">
                                 <af:gridRow id="gr1" height="50%">
-                                    <af:gridCell id="gc10" width="25%" halign="stretch" valign="stretch">
+                                    <af:gridCell id="gc10" width="20%" halign="stretch" valign="stretch">
                                         <af:panelBox text="Administration" id="pb8" showDisclosure="false">
                                             <f:facet name="toolbar"/>
                                             <h:commandLink value="" id="cl8" action="ACT-ERPSOL-GOTO-AMS">
@@ -20,7 +20,7 @@
                                             </h:commandLink>
                                         </af:panelBox>
                                     </af:gridCell>
-                                    <af:gridCell marginStart="5px" width="25%" id="gc1" halign="stretch"
+                                    <af:gridCell marginStart="5px" width="20%" id="gc1" halign="stretch"
                                                  valign="stretch">
                                         <af:panelBox text="Supply Chain Management" id="pb3" showDisclosure="false" styleClass="AFStretchWidth">
                                             <f:facet name="toolbar"/>
@@ -32,7 +32,7 @@
                                         <af:button id="b1" action="ACT-ERPSOL-GOTO-SCM" styleClass="ERPSolButtonImage"
                                                    rendered="false"/>
                                     </af:gridCell>
-                                    <af:gridCell marginStart="5px" width="25%" id="gc2" halign="stretch" marginEnd="5px"
+                                    <af:gridCell marginStart="5px" width="20%" id="gc2" halign="stretch" marginEnd="5px"
                                                  valign="stretch">
                                         <af:panelBox text="Financial Management" id="pb2" showDisclosure="false" styleClass="AFStretchWidth">
                                             <f:facet name="toolbar"/>
@@ -42,7 +42,7 @@
                                             </h:commandLink>
                                         </af:panelBox>
                                     </af:gridCell>
-                                    <af:gridCell marginStart="5px" width="25%" marginEnd="5px" id="gc3" halign="stretch"
+                                    <af:gridCell marginStart="5px" width="20%" marginEnd="5px" id="gc3" halign="stretch"
                                                  valign="stretch">
                                         <af:panelBox text="Warranty Card Printing" id="pb1" showDisclosure="false"
                                                      styleClass="AFStretchWidth">
@@ -53,9 +53,19 @@
                                             </h:commandLink>
                                         </af:panelBox>
                                     </af:gridCell>
+                                    <af:gridCell id="gc12" width="20%" halign="stretch" valign="stretch">
+                                        <af:panelBox text="Production" id="pb10" showDisclosure="false">
+                                        <h:commandLink value="" id="cl9" action="ACT-ERPSOL-GOTO-PMS">
+                                                <af:image id="i15"
+                                                          styleClass="AFStretchWidth"
+                                                          source="#{resource['images:imgProduction.png']}"/>
+                                            </h:commandLink>
+                                            <f:facet name="toolbar"/>
+                                        </af:panelBox>
+                                    </af:gridCell>
                                 </af:gridRow>
                                 <af:gridRow id="gr3" height="50%">
-                                    <af:gridCell id="gc4" width="25%" halign="stretch" valign="stretch">
+                                    <af:gridCell id="gc4" width="20%" halign="stretch" valign="stretch">
                                         <af:panelBox text="Inventory Management System" id="pb4" showDisclosure="false"
                                                      styleClass="AFStretchWidth">
                                             <f:facet name="toolbar"/>
@@ -65,7 +75,7 @@
                                             </h:commandLink>
                                         </af:panelBox>
                                     </af:gridCell>
-                                    <af:gridCell id="gc8" width="25%" halign="stretch" valign="stretch">
+                                    <af:gridCell id="gc8" width="20%" halign="stretch" valign="stretch">
                                         <af:panelBox text="General Ledger System" id="pb6" showDisclosure="false"
                                                      styleClass="AFStretchWidth">
                                             <f:facet name="toolbar"/>
@@ -75,7 +85,7 @@
                                             </h:commandLink>
                                         </af:panelBox>
                                     </af:gridCell>
-                                    <af:gridCell id="gc9" width="25%" halign="stretch" valign="stretch"
+                                    <af:gridCell id="gc9" width="20%" halign="stretch" valign="stretch"
                                                  styleClass="AFStretchWidth">
                                         <af:panelBox text="Payable Management System" id="pb7" showDisclosure="false"
                                                      styleClass="AFStretchWidth">
@@ -94,11 +104,11 @@
                                             </h:commandLink>
                                         </af:panelBox>
                                     </af:gridCell>
-                                    <af:gridCell id="gc11" width="25%">
+                                    <af:gridCell id="gc11" width="20%" columnSpan="2" rowSpan="1">
                                         <af:panelBox text="Service" id="pb9" showDisclosure="false"
                                                      styleClass="AFStretchWidth">
                                             <f:facet name="toolbar"/>
-                                            <h:commandLink value="" id="cl9"
+                                            <h:commandLink value="" id="c29"
                                                            action="#{pageFlowScope.ERPSolLogPageFlowBean.doOpenServiceModule}">
                                                 <af:image id="i10"
                                                           styleClass="AFStretchWidth"
