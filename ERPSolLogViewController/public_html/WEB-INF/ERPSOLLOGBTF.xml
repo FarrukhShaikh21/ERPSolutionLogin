@@ -231,6 +231,12 @@
         <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserRegionCode}</value>
       </input-parameter>
     </task-flow-call>
+    <task-flow-call id="ERPSOLWOM">
+      <task-flow-reference>
+        <document>/WEB-INF/ERPSOLWOM.xml</document>
+        <id>ERPSOLWOM</id>
+      </task-flow-reference>
+    </task-flow-call>
     <control-flow-rule id="__6">
       <from-activity-id>doSetERPSolLoginSessionGlobals</from-activity-id>
       <control-flow-case id="__7">
@@ -275,6 +281,10 @@
       <control-flow-case id="__69">
         <from-outcome>ACT-ERPSOL-GOTO-PMS</from-outcome>
         <to-activity-id>ERPSOLPMSBTF</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__79">
+        <from-outcome>ACT-ERPSOL-GOTO-WOM</from-outcome>
+        <to-activity-id>ERPSOLWOM</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__14">
@@ -368,6 +378,17 @@
         <to-activity-id>ERPSolMain</to-activity-id>
       </control-flow-case>
       <control-flow-case id="__72">
+        <from-outcome>ACT-ERP-SOL-LOGOUT</from-outcome>
+        <to-activity-id>ERPSolLoginReturn</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__77">
+      <from-activity-id>ERPSOLWOM</from-activity-id>
+      <control-flow-case id="__78">
+        <from-outcome>ERPSOL-RETURN-FROM-WOM</from-outcome>
+        <to-activity-id>ERPSolMain</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__80">
         <from-outcome>ACT-ERP-SOL-LOGOUT</from-outcome>
         <to-activity-id>ERPSolLoginReturn</to-activity-id>
       </control-flow-case>

@@ -107,7 +107,7 @@
                                     <af:gridCell id="gc13" width="20%" halign="stretch" valign="stretch">
                                         <af:panelBox text="WorkOrder Management Systen" id="pb12" showDisclosure="false">
                                             <f:facet name="toolbar"/>
-                                            <h:commandLink value="" id="cl10">
+                                            <h:commandLink value="" id="cl10" action="ACT-ERPSOL-GOTO-WOM">
                                                 <af:image source="#{resource['images:imgWorkOrder.jpg']}" id="i11"
                                                           styleClass="AFStretchWidth"/>
                                             </h:commandLink>
