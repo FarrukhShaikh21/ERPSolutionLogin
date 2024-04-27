@@ -236,6 +236,22 @@
         <document>/WEB-INF/ERPSOLWOM.xml</document>
         <id>ERPSOLWOM</id>
       </task-flow-reference>
+      <input-parameter id="__81">
+        <name>P_ADF_USERCODE</name>
+        <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserCode}</value>
+      </input-parameter>
+      <input-parameter id="__82">
+        <name>P_ADF_USER_LOCATIONCODE</name>
+        <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserLocationCode}</value>
+      </input-parameter>
+      <input-parameter id="__83">
+        <name>P_ADF_USER_STORECODE</name>
+        <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserStoreCode}</value>
+      </input-parameter>
+      <input-parameter id="__84">
+        <name>P_ADF_USER_REGIONCODE</name>
+        <value>#{pageFlowScope.ERPSolLogPageFlowBean.ERPSolStrUserRegionCode}</value>
+      </input-parameter>
     </task-flow-call>
     <control-flow-rule id="__6">
       <from-activity-id>doSetERPSolLoginSessionGlobals</from-activity-id>
