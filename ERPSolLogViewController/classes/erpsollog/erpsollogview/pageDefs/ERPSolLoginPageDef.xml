@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="ERPSolLoginPageDef"
+                Package="erpsollog.erpsollogview.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="doERPSolutionLogin_return" IsQueriable="false" IsUpdateable="0"
+                DefaultValue="${bindings.doERPSolutionLogin.result}"/>
+      <variable Type="java.lang.String" Name="doERPSolutionLogin_pUserCode" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="doERPSolutionLogin_pUserassword" IsQueriable="false"/>
+    </variableIterator>
+    <iterator Binds="SysUsersLoginRO" RangeSize="25" DataControl="ERPSolLoginAppModuleDataControl"
+              id="SysUsersLoginROIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="doERPSolutionLogin" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="doERPSolutionLogin" IsViewObjectMethod="true"
+                  DataControl="ERPSolLoginAppModuleDataControl"
+                  InstanceName="data.ERPSolLoginAppModuleDataControl.SysUsersLoginRO"
+                  ReturnName="data.ERPSolLoginAppModuleDataControl.methodResults.doERPSolutionLogin_ERPSolLoginAppModuleDataControl_SysUsersLoginRO_doERPSolutionLogin_result">
+      <NamedData NDName="pUserCode" NDType="java.lang.String" NDValue="${bindings.doERPSolutionLogin_pUserCode}"/>
+      <NamedData NDName="pUserassword" NDType="java.lang.String" NDValue="${bindings.doERPSolutionLogin_pUserassword}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="pUserCode">
+      <AttrNames>
+        <Item Value="doERPSolutionLogin_pUserCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="pUserassword">
+      <AttrNames>
+        <Item Value="doERPSolutionLogin_pUserassword"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="return">
+      <AttrNames>
+        <Item Value="doERPSolutionLogin_return"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SysUsersLoginROIterator" id="Regionid">
+      <AttrNames>
+        <Item Value="Regionid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SysUsersLoginROIterator" id="Storeid">
+      <AttrNames>
+        <Item Value="Storeid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SysUsersLoginROIterator" id="Locationid">
+      <AttrNames>
+        <Item Value="Locationid"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

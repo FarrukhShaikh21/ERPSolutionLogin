@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.10.47" id="DataBindings"
+             SeparateXMLFiles="false" Package="erpsollog.erpsollogview" ClientType="Generic">
+  <pageMap>
+    <page path="/ERPSolLogin.jsf" usageId="erpsollog_erpsollogview_ERPSolLoginPageDef"/>
+    <page path="/ERPSolMain.jsf" usageId="erpsollog_erpsollogview_ERPSolMainPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="erpsollog_erpsollogview_ERPSolLoginPageDef" path="erpsollog.erpsollogview.pageDefs.ERPSolLoginPageDef"/>
+    <page id="erpsollog_erpsollogview_ERPSolMainPageDef" path="erpsollog.erpsollogview.pageDefs.ERPSolMainPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="ERPSolLoginAppModuleDataControl" Package="erpsollog.erpsollogmodel.erpsolloginam"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="ERPSolLoginAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
