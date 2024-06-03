@@ -16,7 +16,7 @@
                                             <h:commandLink value="" id="cl8" action="ACT-ERPSOL-GOTO-AMS">
                                                 <af:image id="i9"
                                                           styleClass="AFStretchWidth"
-                                                          source="#{resource['images:imgAdministration.png']}"/>
+                                                          source="#{resource['images:imgSysAdmin.png']}"/>
                                             </h:commandLink>
                                         </af:panelBox>
                                     </af:gridCell>
@@ -25,8 +25,9 @@
                                         <af:panelBox text="Supply Chain Management" id="pb3" showDisclosure="false" styleClass="AFStretchWidth">
                                             <f:facet name="toolbar"/>
                                             <h:commandLink value="" id="cl1" action="ACT-ERPSOL-GOTO-SCM">
-                                                <af:image source="/imgSupplyChain.jpg" id="i1"
-                                                          styleClass="AFStretchWidth"/>
+                                                <af:image id="i1"
+                                                          styleClass="AFStretchWidth"
+                                                          source="#{resource['images:imgSupplyChain.png']}"/>
                                             </h:commandLink>
                                         </af:panelBox>
                                         <af:button id="b1" action="ACT-ERPSOL-GOTO-SCM" styleClass="ERPSolButtonImage"
@@ -38,7 +39,7 @@
                                             <f:facet name="toolbar"/>
                                             <h:commandLink value="" id="cl2" action="ACT-ERPSOL-GOTO-FMS">
                                                 <af:image id="i2" styleClass="AFStretchWidth"
-                                                          source="#{resource['images:imgFinance.jpg']}"/>
+                                                          source="#{resource['images:imgFinance.png']}"/>
                                             </h:commandLink>
                                         </af:panelBox>
                                     </af:gridCell>
@@ -48,8 +49,9 @@
                                                      styleClass="AFStretchWidth">
                                             <f:facet name="toolbar"/>
                                             <h:commandLink value="" id="cl3" action="ACT-ERPSOL-GOTO-WCP">
-                                                <af:image source="#{resource['images:imgWarrantyCard.jpg']}" id="i3"
-                                                          styleClass="AFStretchWidth"/>
+                                                <af:image id="i3"
+                                                          styleClass="AFStretchWidth"
+                                                          source="#{resource['images:imgWarrantyCard.png']}"/>
                                             </h:commandLink>
                                         </af:panelBox>
                                     </af:gridCell>
@@ -58,7 +60,7 @@
                                         <h:commandLink value="" id="cl9" action="ACT-ERPSOL-GOTO-PMS">
                                                 <af:image id="i15"
                                                           styleClass="AFStretchWidth"
-                                                          source="#{resource['images:imgProduction.png']}"/>
+                                                          source="#{resource['images:imgProductions.png']}"/>
                                             </h:commandLink>
                                             <f:facet name="toolbar"/>
                                         </af:panelBox>
