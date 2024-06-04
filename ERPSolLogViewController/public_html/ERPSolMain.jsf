@@ -72,8 +72,9 @@
                                                      styleClass="AFStretchWidth">
                                             <f:facet name="toolbar"/>
                                             <h:commandLink value="" id="cl4" action="ACT-ERPSOL-GOTO-IMS">
-                                                <af:image source="#{resource['images:imgInvengory.jpg']}" id="i5"
-                                                          styleClass="AFStretchWidth"/>
+                                                <af:image id="i5"
+                                                          styleClass="AFStretchWidth"
+                                                          source="#{resource['images:imgInvengory.png']}"/>
                                             </h:commandLink>
                                         </af:panelBox>
                                     </af:gridCell>
@@ -82,8 +83,9 @@
                                                      styleClass="AFStretchWidth">
                                             <f:facet name="toolbar"/>
                                             <h:commandLink value="" id="cl6" action="ACT-ERPSOL-GOTO-GLS">
-                                                <af:image id="i7" source="#{resource['images:imgGeneralLedger.png']}"
-                                                          styleClass="AFStretchWidth"/>
+                                                <af:image id="i7"
+                                                          styleClass="AFStretchWidth"
+                                                          source="#{resource['images:imgGeneralLedgers.png']}"/>
                                             </h:commandLink>
                                         </af:panelBox>
                                     </af:gridCell>
@@ -93,8 +95,9 @@
                                                      styleClass="AFStretchWidth">
                                             <f:facet name="toolbar"/>
                                             <h:commandLink value="" id="cl7" action="ACT-ERPSOL-GOTO-APS">
-                                                <af:image id="i8" source="#{resource['images:imgAccountsPayable.jpg']}"
-                                                          styleClass="AFStretchWidth"/>
+                                                <af:image id="i8"
+                                                          styleClass="AFStretchWidth"
+                                                          source="#{resource['images:imgAccountsPayable.png']}"/>
                                             </h:commandLink>
                                         </af:panelBox>
                                         <af:panelBox text="Administration" id="pb5" showDisclosure="false"
@@ -110,8 +113,9 @@
                                         <af:panelBox text="WorkOrder Management Systen" id="pb12" showDisclosure="false">
                                             <f:facet name="toolbar"/>
                                             <h:commandLink value="" id="cl10" action="ACT-ERPSOL-GOTO-WOM">
-                                                <af:image source="#{resource['images:imgWorkOrder.jpg']}" id="i11"
-                                                          styleClass="AFStretchWidth"/>
+                                                <af:image id="i11"
+                                                          styleClass="AFStretchWidth"
+                                                          source="#{resource['images:imgWorkOrder.png']}"/>
                                             </h:commandLink>
                                         </af:panelBox>
                                     </af:gridCell>
@@ -124,7 +128,7 @@
                                                            action="#{pageFlowScope.ERPSolLogPageFlowBean.doOpenServiceModule}">
                                                 <af:image id="i10"
                                                           styleClass="AFStretchWidth"
-                                                          source="#{resource['images:imgService.png']}"/>
+                                                          source="#{resource['images:imgServices.png']}"/>
                                             </h:commandLink>                                            
                                         </af:panelBox>
                                     </af:gridCell>
